@@ -12,7 +12,17 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigation() {
 
   return (
-   <Drawer.Navigator>
+   <Drawer.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: "transparent",
+        elevation: 0, // для Android
+        shadowOpacity: 0, // для iOS
+      },
+      headerTransparent: true,
+      headerTitle: "",
+    }}
+   >
     
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="Account" component={Account} />
