@@ -39,7 +39,7 @@ export function SplashViewModel() {
 
         ]).start(() => {
           setTimeout(() => {
-            navigation.replace("HomeScreen");
+            navigation.replace("Drawer");
           }, 600);
         })
       },[])
