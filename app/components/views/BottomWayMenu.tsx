@@ -33,16 +33,16 @@ export default function BottomWayMenu() {
       paddingTop:normalize(40), 
       zIndex:2, 
       bottom:normalize(0), 
-      backgroundColor:"#637483", 
+      backgroundColor:"#21262c", 
       height:normalize(250), 
       width:"100%"
      }}
     >
 
-      <TextInput placeholder='where are we going?' placeholderTextColor="#637483" style={{padding:normalize(5), backgroundColor:"#424d57", color:"white", borderRadius:normalize(10), height:normalize(60), width:normalize(330)}}/>
+      <TextInput placeholder='where are we going?' placeholderTextColor="#21262c" style={{padding:normalize(5), backgroundColor:"#424d57", color:"white", borderRadius:normalize(10), height:normalize(60), width:normalize(330)}}/>
 
       <TouchableOpacity style={{backgroundColor:"yellow", display:"flex", alignItems:"center", justifyContent:"center", borderRadius:normalize(10), height:normalize(60), width:normalize(330)}}>
-        <Text style={{color:"#637483", fontSize:normalize(20), fontWeight:"700"}}>Go</Text>
+        <Text style={{color:"#21262c", fontSize:normalize(20), fontWeight:"700"}}>Go</Text>
       </TouchableOpacity>
      
     </Animated.View>

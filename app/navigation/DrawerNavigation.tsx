@@ -32,42 +32,42 @@ export default function DrawerNavigation() {
         headerTitle: "",
       }}
     >
-     <Drawer.Screen
-    name="HomeScreen"
-    component={HomeScreen}
-    options={{
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="home-outline" size={size} color={color} />
-      ),
-    }}
-  />
-  <Drawer.Screen
-    name="Account"
-    component={Account}
-    options={{
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="person-outline" size={size} color={color} />
-      ),
-    }}
-  />
-  <Drawer.Screen
-    name="Activity"
-    component={Activity}
-    options={{
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="bar-chart-outline" size={size} color={color} />
-      ),
-    }}
-  />
-  <Drawer.Screen
-    name="Cars"
-    component={Cars}
-    options={{
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="car-outline" size={size} color={color} />
-      ),
-    }}
-  />
+      <Drawer.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Account"
+        component={Account}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Activity"
+        component={Activity}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="bar-chart-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Cars"
+        component={Cars}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="car-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
