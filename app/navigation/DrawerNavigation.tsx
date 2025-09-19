@@ -17,8 +17,8 @@ export default function DrawerNavigation() {
     screenOptions={{
       headerStyle: {
         backgroundColor: "transparent",
-        elevation: 0, // для Android
-        shadowOpacity: 0, // для iOS
+        elevation: 0,
+        shadowOpacity: 0,
       },
       headerTransparent: true,
       headerTitle: "",
