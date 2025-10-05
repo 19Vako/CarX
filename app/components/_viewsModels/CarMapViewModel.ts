@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { LocationModel } from "../models/CarMapModel";
-import { requestLocation } from "../services/CarMapService";
+import { LocationModel } from "../_models/CarMapModel";
+import { requestLocation } from "../_services/CarMapService";
 
 export function useCarXMapViewModel() {
   const [location, setLocation] = useState<LocationModel | null>(null);

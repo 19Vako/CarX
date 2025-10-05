@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import normalize from "react-native-normalize";
-import { useOpenMenu } from "../viewsModels/MenuButtonViewModel";
+import { useOpenMenu } from "../_viewsModels/MenuButtonViewModel";
 
 
 export function MenuButton() {

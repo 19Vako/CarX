@@ -1,15 +1,15 @@
-import BottomWayMenu from '@/app/components/views/BottomWayMenu'
-import CarXMap from '@/app/components/views/CarMap'
-import React from 'react'
-import { View } from 'react-native'
+import BottomWayMenu from '@/app/components/_views/BottomWayMenu';
+import CarXMap from '@/app/components/_views/CarMap';
+import React from 'react';
+import { View } from 'react-native';
 
 
 const HomeScreen = () => {
   return (
-    <View style={{flex:1, backgroundColor:"gray"}}>
-      <CarXMap/>
-      <BottomWayMenu/>
-    </View>
+      <View style={{flex:1, backgroundColor:"gray"}}>
+        <CarXMap/>
+        <BottomWayMenu/>
+      </View>
   )
 }
 

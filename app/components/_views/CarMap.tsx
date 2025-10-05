@@ -2,7 +2,7 @@ import React from "react";
 import { ActivityIndicator, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
-import { useCarXMapViewModel } from "../viewsModels/CarMapViewModel";
+import { useCarXMapViewModel } from "../_viewsModels/CarMapViewModel";
 
 export default function CarXMap() {
   const { location, loading } = useCarXMapViewModel();
@@ -22,7 +22,7 @@ export default function CarXMap() {
         showsUserLocation
         initialRegion={{
           latitude: location?.latitude || 50.4501,
-          longitude: location?.longitude || 30.5234,
+          longitude: location?.longitude || 30.400,
           latitudeDelta: 0.01,
           longitudeDelta: 0.01,
         }}

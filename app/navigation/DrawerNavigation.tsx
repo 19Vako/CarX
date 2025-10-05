@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import React from "react";
-import { MenuButton } from "../components/views/MenuButton";
+import { MenuButton } from "../components/_views/MenuButton";
 import Account from "./views/Account";
 import Activity from "./views/Activity";
 import Cars from "./views/Cars";
@@ -12,6 +12,7 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigation() {
   return (
     <Drawer.Navigator
+      detachInactiveScreens={true}
       screenOptions={{
         headerStyle: {
           backgroundColor: "transparent",
@@ -35,6 +36,7 @@ export default function DrawerNavigation() {
       <Drawer.Screen
         name="HomeScreen"
         component={HomeScreen}
+        
         options={{
           drawerIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />

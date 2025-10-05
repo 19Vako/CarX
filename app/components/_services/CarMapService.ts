@@ -1,5 +1,5 @@
 import * as Location from "expo-location";
-import { LocationModel } from "../models/CarMapModel";
+import { LocationModel } from "../_models/CarMapModel";
 
 export const requestLocation = async (): Promise<LocationModel | null> => {
   const { status } = await Location.requestForegroundPermissionsAsync();

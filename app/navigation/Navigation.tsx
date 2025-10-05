@@ -13,9 +13,10 @@ export default function Navigation() {
       screenOptions={{
         headerShown: false,
       }}
+      
     >
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
-      <Stack.Screen name="Drawer" component={DrawerNavigation} />
+      <Stack.Screen name="Drawer" component={DrawerNavigation}  />
     </Stack.Navigator>
   );
 }

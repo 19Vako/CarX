@@ -1,6 +1,7 @@
-import { Animated, View } from 'react-native';
+import { Animated, Dimensions, View } from 'react-native';
 import normalize from 'react-native-normalize';
 import { SplashViewModel } from "../viewsmodel/SplashScreenModel";
+const { width, height } = Dimensions.get("window");
 
 const SplashScreen = () => {
  

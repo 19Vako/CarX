@@ -46,6 +46,7 @@ export default function BottomWayMenu() {
       </TouchableOpacity>
      
     </Animated.View>
+    
    </View>
   )
 }
