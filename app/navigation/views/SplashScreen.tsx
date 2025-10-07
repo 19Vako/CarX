@@ -1,59 +1,71 @@
-import { Animated, Dimensions, View } from 'react-native';
-import normalize from 'react-native-normalize';
-import { SplashViewModel } from "../viewsmodel/SplashScreenModel";
-const { width, height } = Dimensions.get("window");
+import { Animated, View } from 'react-native';
+import { SplashViewModel } from '../viewsmodel/SplashScreenModel';
 
 const SplashScreen = () => {
- 
-  const { carAnimation, logoAnimation, pointPosition, } = SplashViewModel();
+  const { carAnimation, logoAnimation, pointPosition } = SplashViewModel();
 
   return (
-    <View style={{flex:1, flexDirection:"column", backgroundColor: "yellow", justifyContent:"center", alignItems:"center"}}>
-      <Animated.Image 
+    <View style={{flex: 1, alignItems: "center", justifyContent:"center", backgroundColor: "yellow"}}>
+     
+      <View 
+        style={{
+          position: "relative", 
+          display:"flex", 
+          flexDirection:"column", 
+          alignItems: "center", 
+          justifyContent:"center", 
+          height: 300, 
+          width: "auto"
+        }}
+      >
+      
+      <Animated.Image
         source={require("../../../assets/images/car.png")}
         style={[
           carAnimation.getLayout(), 
-          {position:"absolute", 
-           top:normalize(400),  
-           width:normalize(250), 
-           height:normalize(150)
+          {
+            top:10, 
+            width:260, 
+            height:222
           }
         ]}
       />
 
-      <Animated.Image 
+      <Animated.Image
+        source={require("../../../assets/images/point.png")}
         style={[
           pointPosition.getLayout(),
-          {position:"absolute", 
-           left:normalize(40),
-           width:normalize(65),
-           height:normalize(63),
-          },
-        ]}  
-        source={require("../../../assets/images/point.png")} 
+          {
+            position: "absolute",
+            left: -17,
+            height:60,
+            width:60
+          }
+        ]}
       />
 
-    
       <Animated.Text
-        style={{
-            position:"absolute", 
-            top:normalize(300), 
-            fontWeight:"700",
-            fontSize: logoAnimation.interpolate({
-              inputRange: [0, 150],
-              outputRange: [0, 150],
+        style={[
+          {
+            position: "absolute",
+       
+            fontFamily: "Roboto-Medium",
+            fontSize: logoAnimation.interpolate({ 
+              inputRange: [0, 1], 
+              outputRange: [1, 2], 
             }),
-            opacity: logoAnimation.interpolate({
-              inputRange: [0, 1],
-              outputRange: [0, 1],
+            opacity:  logoAnimation.interpolate({ 
+              inputRange: [0, 1], 
+              outputRange: [0, 1], 
             }),
-       }}
+          },
+        ]}
       >
         CarX
       </Animated.Text>
-      
+     </View>
     </View>
-  )
-}
+  );
+};
 
-export default SplashScreen
+export default SplashScreen;

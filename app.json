@@ -4,7 +4,6 @@
     "slug": "carX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo.jpg",
     "scheme": "carx",
     "userInterfaceStyle": "automatic",
     "backgroundColor": "gray",
@@ -21,7 +20,6 @@
     "android": {
       "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png"
       },
       "edgeToEdgeEnabled": true
     },
