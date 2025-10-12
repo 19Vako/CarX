@@ -3,9 +3,8 @@ import { TouchableOpacity } from "react-native";
 import normalize from "react-native-normalize";
 import { useOpenMenu } from "../_viewsModels/MenuButtonViewModel";
 
-
 export function MenuButton() {
-  const openMenu = useOpenMenu()
+  const openMenu = useOpenMenu();
   return (
     <TouchableOpacity
       style={{
@@ -24,4 +23,3 @@ export function MenuButton() {
     </TouchableOpacity>
   );
 }
-

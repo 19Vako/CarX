@@ -1,5 +1,1 @@
-
-
-export function BottomWayMenuViewModel() {
-    
-}
+export function BottomWayMenuViewModel() {}

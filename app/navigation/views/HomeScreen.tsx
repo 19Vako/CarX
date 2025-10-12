@@ -1,16 +1,13 @@
-import BottomWayMenu from '@/app/components/_views/BottomWayMenu';
-import CarXMap from '@/app/components/_views/CarMap';
-import React from 'react';
-import { View } from 'react-native';
-
+import React from "react";
+import { View } from "react-native";
+import Registration from "./Registration";
 
 const HomeScreen = () => {
   return (
-      <View style={{flex:1, backgroundColor:"gray"}}>
-        <CarXMap/>
-        <BottomWayMenu/>
-      </View>
-  )
-}
+    <View style={{ flex: 1, backgroundColor: "gray" }}>
+      <Registration />
+    </View>
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
