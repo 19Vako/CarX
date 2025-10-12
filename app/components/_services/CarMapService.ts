@@ -13,5 +13,3 @@ export const requestLocation = async (): Promise<LocationModel | null> => {
     longitude: pos.coords.longitude,
   };
 };
-
-

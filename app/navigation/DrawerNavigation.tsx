@@ -36,7 +36,6 @@ export default function DrawerNavigation() {
       <Drawer.Screen
         name="HomeScreen"
         component={HomeScreen}
-        
         options={{
           drawerIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
