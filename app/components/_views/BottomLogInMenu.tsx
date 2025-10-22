@@ -13,10 +13,13 @@ export default function BottomLogInMenu() {
   return (
     <View
       style={{
+        position:"absolute",
+        bottom:0,
         height: 300,
         width: "100%",
         display: "flex",
         alignItems: "center",
+        zIndex:2,
         backgroundColor: "#262E38",
       }}
     >
@@ -25,7 +28,6 @@ export default function BottomLogInMenu() {
         mode="outlined"
         value={email}
         textColor="white"
-        
         activeOutlineColor="white"
         theme={{
           colors: {
@@ -36,12 +38,12 @@ export default function BottomLogInMenu() {
         autoCapitalize="none"
         textContentType="emailAddress"
         autoComplete="email"
-        style={{ 
-          width: "90%", 
-          height: 50, 
+        style={{
+          width: "90%",
+          height: 50,
           margin: 10,
-          fontSize:20,
-          backgroundColor: "#424d57" 
+          fontSize: 20,
+          backgroundColor: "#424d57",
         }}
         onChangeText={(email) => setEmail(email)}
       />
@@ -51,14 +53,12 @@ export default function BottomLogInMenu() {
           width: "90%",
           borderRadius: 5,
           margin: 10,
-          borderColor:"white"
+          borderColor: "white",
         }}
-        
-        contentStyle={{ 
-          height: 50, 
+        contentStyle={{
+          height: 50,
           backgroundColor: "yellow",
         }}
-
         icon="login"
         mode="outlined"
         textColor="#424d57"
@@ -85,7 +85,7 @@ export default function BottomLogInMenu() {
 
       <View
         style={{
-          marginTop:10,
+          marginTop: 10,
           width: "93%",
           display: "flex",
           flexDirection: "row",
@@ -96,7 +96,6 @@ export default function BottomLogInMenu() {
         <IconButton
           icon="apple"
           size={45}
-          
           iconColor="white"
           style={{ backgroundColor: "#424d57", borderRadius: 10 }}
           onPress={() => console.log("Pressed")}
