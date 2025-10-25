@@ -1,12 +1,13 @@
-import BottomLogInMenu from "@/app/components/_views/BottomLogInMenu";
 import React from "react";
-import { Image, View } from "react-native";
-import { Images } from "../../constants/images";
+import { View } from "react-native";
+
+import BottomLogInMenu from "@/app/components/_views/BottomLogInMenu";
+import RegistrationAnimatedView from "@/app/components/_views/RegistrationAnimatedView";
 
 export default function Registration() {
   return (
-    <View style={{ flex: 1, backgroundColor: "#21262c", alignItems: "center" }}>
-      <Image style={{ flex: 1, width: "100%" }} source={Images.cardSchema} />
+    <View style={{ flex: 3, backgroundColor: "#21262c" }}>
+      <RegistrationAnimatedView />
       <BottomLogInMenu />
     </View>
   );

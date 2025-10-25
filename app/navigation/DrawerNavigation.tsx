@@ -24,6 +24,7 @@ export default function DrawerNavigation() {
         },
         drawerActiveTintColor: "#fff",
         drawerInactiveTintColor: "#ccc",
+
         drawerLabelStyle: {
           fontSize: 16,
           fontWeight: "bold",
@@ -60,6 +61,7 @@ export default function DrawerNavigation() {
           ),
         }}
       />
+
       <Drawer.Screen
         name="Cars"
         component={Cars}
