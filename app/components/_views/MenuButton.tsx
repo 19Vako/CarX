@@ -11,15 +11,16 @@ export function MenuButton() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#424d57",
+        backgroundColor: "#262E38",
         height: normalize(30),
         width: normalize(30),
         borderRadius: normalize(10),
+        marginTop: normalize(20),
         marginLeft: normalize(15),
       }}
       onPress={openMenu}
     >
-      <Ionicons name="menu" size={normalize(20)} color="#637483" />
+      <Ionicons name="menu" size={normalize(20)} color="white" />
     </TouchableOpacity>
   );
 }

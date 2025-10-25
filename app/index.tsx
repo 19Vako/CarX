@@ -6,18 +6,12 @@ import { PersistGate } from "redux-persist/integration/react";
 import Navigation from "./navigation/Navigation";
 import store, { persistor } from "./store/store";
 
-
 import { usePushNotifications } from "./notifications/useNotification";
 
 const { height, width } = Dimensions.get("window");
 
-
-
 export default function App() {
-
-
-  const {expoPushToken, notification} = usePushNotifications()
- 
+  const { expoPushToken, notification } = usePushNotifications();
 
   const [fontsLoaded] = Font.useFonts({
     "SpaceMono-Regular": require("@/assets/fonts/SpaceMono-Regular.ttf"),
@@ -27,18 +21,13 @@ export default function App() {
     return null;
   }
 
-
-
   return (
-    
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <View style={{ position: "absolute", height, width }}>
           <Navigation />
         </View>
       </PersistGate>
-    </Provider> 
-  
-
+    </Provider>
   );
 }

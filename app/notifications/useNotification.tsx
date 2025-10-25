@@ -1,8 +1,8 @@
-import Constants from 'expo-constants';
+import Constants from "expo-constants";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import { useEffect, useRef, useState } from "react";
-import { Platform } from 'react-native';
+import { Platform } from "react-native";
 
 export interface PushNotificationState {
   notification?: Notifications.Notification;
@@ -10,7 +10,6 @@ export interface PushNotificationState {
 }
 
 export const usePushNotifications = (): PushNotificationState => {
-  
   Notifications.setNotificationHandler({
     handleNotification: async () => ({
       shouldPlaySound: false,
@@ -43,57 +42,52 @@ export const usePushNotifications = (): PushNotificationState => {
         finalStatus = status;
       }
       if (finalStatus !== "granted") {
-        alert("Failed to push token")
+        alert("Failed to push token");
       }
 
       token = await Notifications.getExpoPushTokenAsync({
-        projectId: Constants.expoConfig?.extra?.eas?.projectId
+        projectId: Constants.expoConfig?.extra?.eas?.projectId,
       });
 
-      if(Platform.OS === "android"){
+      if (Platform.OS === "android") {
         Notifications.setNotificationChannelAsync("default", {
           name: "default",
           importance: Notifications.AndroidImportance.MAX,
           vibrationPattern: [0, 250, 250, 250],
-          lightColor: "#FF231F7C"
-        })
-
+          lightColor: "#FF231F7C",
+        });
       }
 
-      return token
-
+      return token;
     } else {
       console.log("err: use a physical device");
     }
   }
   useEffect(() => {
     registerForPushNotificationsAsync().then((token) => {
-      setExpoPushToken(token)
-    })
+      setExpoPushToken(token);
+    });
 
-    notificationListener.current = 
+    notificationListener.current =
       Notifications.addNotificationReceivedListener((notification) => {
-         setNotification(notification)
+        setNotification(notification);
+      });
 
-      })
+    responsListener.current = Notifications.addNotificationReceivedListener(
+      (response) => {
+        console.log(response);
+      },
+    );
 
-    responsListener.current = 
-      Notifications.addNotificationReceivedListener((response) => {
-         console.log(response)
-      })
-      
     return () => {
       notificationListener.current?.remove();
 
       responsListener.current?.remove();
-    }
-
-  },[])
-
+    };
+  }, []);
 
   return {
     expoPushToken,
-    notification
-  }
-
+    notification,
+  };
 };

@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import DrawerNavigation from "./DrawerNavigation";
+import Registration from "./views/Registration";
 import SplashScreen from "./views/SplashScreen";
 
 const Stack = createNativeStackNavigator();
@@ -14,6 +15,7 @@ export default function Navigation() {
     >
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="Drawer" component={DrawerNavigation} />
+      <Stack.Screen name="Registration" component={Registration} />
     </Stack.Navigator>
   );
 }

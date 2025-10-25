@@ -1,49 +1,42 @@
-import { Animated, Image, View } from 'react-native';
-import { Images } from "../../constants/images";
-import { RegistrationAnimatedViewModel } from '../_viewsModels/RegistrationAnimatedViewModel';
+import { Animated, Image, View } from "react-native";
 
+import normalize from "react-native-normalize";
+import { Images } from "../../constants/images";
+import { RegistrationAnimatedViewModel } from "../_viewsModels/RegistrationAnimatedViewModel";
 
 const RegistrationAnimatedView = () => {
-  const { carCentral, carCentralRotate } = RegistrationAnimatedViewModel()
+  const { carCentral, carCentralRotate } = RegistrationAnimatedViewModel();
   return (
-    <View style={{
-      alignItems: "center", 
-      justifyContent: "center", 
-      position:"relative", 
-      height: 1070,
-      zIndex:1,
-      width: 1200 
-    }}>
-      
-      
-      <Image 
+    <View
+      style={{
+        alignItems: "center",
+        position: "relative",
+        flex: 1,
+      }}
+    >
+      <Image
         style={{
-          flex:1,
-          width: 1200
-        }} 
-        source={Images.cardSchema} 
+          height: normalize(608),
+          width: normalize(600),
+          resizeMode: "contain",
+        }}
+        source={Images.cardSchema}
       />
-
 
       <Animated.Image
         style={[
           carCentral.getLayout(),
-          { position:"absolute", 
-            height:20, 
-            width: 35,
-            transform: [{rotate:carCentralRotate}]
-          }
+          {
+            position: "absolute",
+            height: normalize(15),
+            width: normalize(30),
+            transform: [{ rotate: carCentralRotate }],
+          },
         ]}
         source={Images.taxiCarTopView}
       />
-
-
-
-  
-
-
     </View>
-  )
-}
+  );
+};
 
-export default RegistrationAnimatedView
+export default RegistrationAnimatedView;
