@@ -1,11 +1,18 @@
 import React from "react";
-import { ActivityIndicator, View } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import { View } from "react-native";
 
-import { useCarXMapViewModel } from "../_viewsModels/CarMapViewModel";
+/* let MapView:any, Marker:any;
+
+const isWeb = (Platform.OS as any) === "web";
+
+if (!isWeb) {
+  const Maps = require("react-native-maps");
+  MapView = Maps.default;
+  Marker = Maps.Marker;
+} */
 
 export default function CarXMap() {
-  const { location, loading } = useCarXMapViewModel();
+  /*  const { location, loading } = useCarXMapViewModel();
 
   if (loading) {
     return (
@@ -15,8 +22,19 @@ export default function CarXMap() {
     );
   }
 
+  if (isWeb) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <View>
+          <ActivityIndicator size="small" color="#666" />
+        </View>
+      </View>
+    ); 
+  }*/
+
   return (
     <View style={{ flex: 1 }}>
+     {/*  {!isWeb && (
       <MapView
         style={{ width: "100%", height: "100%" }}
         showsUserLocation
@@ -29,6 +47,9 @@ export default function CarXMap() {
       >
         {location && <Marker coordinate={location} />}
       </MapView>
+      )
+    } */}
     </View>
   );
+
 }
