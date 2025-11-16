@@ -8,7 +8,7 @@ import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
 export default function BottomLogInMenu() {
   const [email, setEmail] = useState("");
   const { keyBoardVisible } = BottomWayMenuViewModel();
-  const {  promptAsync } = BottomLogInMenuService()
+  const { promptAsync } = BottomLogInMenuService();
 
   return (
     <View
