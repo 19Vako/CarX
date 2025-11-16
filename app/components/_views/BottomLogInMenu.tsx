@@ -8,7 +8,7 @@ import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
 export default function BottomLogInMenu() {
   const [email, setEmail] = useState("");
   const { keyBoardVisible } = BottomWayMenuViewModel();
-  const {  promptAsync } = BottomLogInMenuService()
+  const { promptAsync } = BottomLogInMenuService();
 
   return (
     <View
@@ -121,7 +121,7 @@ export default function BottomLogInMenu() {
               size={40}
               iconColor="white"
               style={{ backgroundColor: "#424d57", borderRadius: 10 }}
-              onPress={() => promptAsync()}
+              onPress={() =>  promptAsync()}
             />
             <IconButton
               icon="account-key"
