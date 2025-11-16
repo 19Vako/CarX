@@ -121,7 +121,7 @@ export default function BottomLogInMenu() {
               size={40}
               iconColor="white"
               style={{ backgroundColor: "#424d57", borderRadius: 10 }}
-              onPress={() =>  promptAsync()}
+              onPress={() => promptAsync()}
             />
             <IconButton
               icon="account-key"

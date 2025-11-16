@@ -34,7 +34,7 @@ export default function CarXMap() {
 
   return (
     <View style={{ flex: 1 }}>
-     {/*  {!isWeb && (
+      {/*  {!isWeb && (
       <MapView
         style={{ width: "100%", height: "100%" }}
         showsUserLocation
@@ -51,5 +51,4 @@ export default function CarXMap() {
     } */}
     </View>
   );
-
 }

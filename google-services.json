@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "958141765741",
+    "project_id": "study-push-notification-13e87",
+    "storage_bucket": "study-push-notification-13e87.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958141765741:android:527a18b20d4357ff220764",
+        "android_client_info": {
+          "package_name": "com.sergii.carX"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfNfE4utpSYsbdWIq_8WpmRgXmk92w2JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
