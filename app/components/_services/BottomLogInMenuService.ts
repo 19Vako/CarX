@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 WebBrowser.maybeCompleteAuthSession();
 
-export function BottomLogInMenuService() {
+export function useBottomLogInMenuService() {
   const [request, response, promptAsync] = Google.useAuthRequest({
     iosClientId:
       "561248963797-ng585ieq3ael47icplmhdll0gbnl52p1.apps.googleusercontent.com",
@@ -18,6 +18,7 @@ export function BottomLogInMenuService() {
       console.log("Google token:", authentication?.accessToken);
     }
   }, [response]);
+
 
   return {
     promptAsync,
