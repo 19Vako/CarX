@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Text, View } from "react-native";
 import normalize from "react-native-normalize";
 import { Button, IconButton, TextInput } from "react-native-paper";
-import { BottomLogInMenuService } from "../_services/BottomLogInMenuService";
+import { useBottomLogInMenuService } from "../_services/BottomLogInMenuService";
 import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
 
 export default function BottomLogInMenu() {
   const [email, setEmail] = useState("");
   const { keyBoardVisible } = BottomWayMenuViewModel();
-  const { promptAsync } = BottomLogInMenuService();
+  const { promptAsync } = useBottomLogInMenuService();
 
+  
   return (
     <View
       style={{
@@ -60,7 +61,7 @@ export default function BottomLogInMenu() {
         onChangeText={(email) => setEmail(email)}
       />
 
-      {!keyBoardVisible && (
+    
         <>
           <Button
             style={{
@@ -78,9 +79,8 @@ export default function BottomLogInMenu() {
             icon="login"
             mode="outlined"
             textColor="#424d57"
-            onPress={() => console.log("Pressed")}
           >
-            Log in
+            Log In
           </Button>
 
           <Text
@@ -139,7 +139,7 @@ export default function BottomLogInMenu() {
             />
           </View>
         </>
-      )}
+
     </View>
   );
 }
