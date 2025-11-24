@@ -1,26 +1,51 @@
 {
   "project_info": {
-    "project_number": "958141765741",
-    "project_id": "study-push-notification-13e87",
-    "storage_bucket": "study-push-notification-13e87.firebasestorage.app"
+    "project_number": "745026637842",
+    "project_id": "carx-9719d",
+    "storage_bucket": "carx-9719d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:958141765741:android:527a18b20d4357ff220764",
+        "mobilesdk_app_id": "1:745026637842:android:ff2d437c74e335daa388cb",
         "android_client_info": {
           "package_name": "com.sergii.carX"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "745026637842-4a8cep5v5unkc2l39s2gk17q49n13eas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sergii.carX",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "745026637842-4kug0ba85p74saj136eq1d0vfigllprf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCfNfE4utpSYsbdWIq_8WpmRgXmk92w2JU"
+          "current_key": "AIzaSyBu4WiyQRqINMKbuHSg3lOaK0te6Wi5mng"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745026637842-4kug0ba85p74saj136eq1d0vfigllprf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sergii.carX"
+              }
+            }
+          ]
         }
       }
     }

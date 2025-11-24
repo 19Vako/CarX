@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { Animated, Text, View } from "react-native";
 import normalize from "react-native-normalize";
 import { Button, IconButton, TextInput } from "react-native-paper";
-import { BottomLogInMenuService } from "../_services/BottomLogInMenuService";
-import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
+import { useBottomLogInMenuService } from "../_services/BottomLogInMenuService";
+import { BottomLogInMenuModel } from "../_viewsModels/BottomLogInMenuModel";
 
-export default function BottomLogInMenu() {
+
+export default function BottomLogInMenu({handleView} : {handleView: (View: "Gmail_Password_View" | "Welcome_View") => void}) {
   const [email, setEmail] = useState("");
-  const { keyBoardVisible } = BottomWayMenuViewModel();
-  const { promptAsync } = BottomLogInMenuService();
+  const { heightAnimation } = BottomLogInMenuModel();
+  const { promptAsync } = useBottomLogInMenuService();
 
+  
   return (
-    <View
+    <Animated.View
       style={{
         position: "absolute",
         bottom: 0,
-        height: !keyBoardVisible ? 400 : 600,
+        height: heightAnimation,
         width: "100%",
         display: "flex",
         justifyContent: "flex-start",
@@ -60,7 +62,6 @@ export default function BottomLogInMenu() {
         onChangeText={(email) => setEmail(email)}
       />
 
-      {!keyBoardVisible && (
         <>
           <Button
             style={{
@@ -78,9 +79,8 @@ export default function BottomLogInMenu() {
             icon="login"
             mode="outlined"
             textColor="#424d57"
-            onPress={() => console.log("Pressed")}
           >
-            Log in
+            Log In
           </Button>
 
           <Text
@@ -135,11 +135,11 @@ export default function BottomLogInMenu() {
               size={40}
               iconColor="white"
               style={{ backgroundColor: "#424d57", borderRadius: 10 }}
-              onPress={() => console.log("Pressed")}
+              onPress={() => handleView("Gmail_Password_View")}
             />
           </View>
         </>
-      )}
-    </View>
+
+    </Animated.View>
   );
 }
