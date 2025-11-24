@@ -1,14 +1,37 @@
 import React, { useState } from "react";
-import { View } from 'react-native';
-import { Button, TextInput } from "react-native-paper";
+import { Animated } from 'react-native';
+import { Button, IconButton, TextInput } from "react-native-paper";
+import { ContinueWithGmailAndPassworsModel } from "../_viewsModels/ContinueWithGmailAndPassworsModel";
 
-const ContinueWithGmailAndPasswors = () => {
+
+export default function ContinueWithGmailAndPasswors({handleView} : {handleView: (View: "Gmail_Password_View" | "Welcome_View") => void}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+    const {heightAnimation, positionButton} = ContinueWithGmailAndPassworsModel();
 
+  
     return (
-      <View>
+     <>
+      <IconButton
+          icon="arrow-left"
+          size={30}
+          iconColor="white"
+          style={{backgroundColor: "#424d57", borderRadius: 10, position: "absolute", top: 50, left: 15, zIndex: 3}}
+          onPress={() => handleView("Welcome_View")}
+        />
+      <Animated.View
+        style={{
+        position: "absolute",
+        bottom: 0,
+        height: heightAnimation,
+        width: "100%",
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        zIndex: 2,
+        backgroundColor: "#262E38",
+        }}
+      >
         <TextInput
         label="Email"
         mode="outlined"
@@ -33,7 +56,6 @@ const ContinueWithGmailAndPasswors = () => {
         }}
         onChangeText={setEmail}
         />
-
         <TextInput
         label="Password"
         mode="outlined"
@@ -60,6 +82,7 @@ const ContinueWithGmailAndPasswors = () => {
         <Button
             style={{
               backgroundColor: "yellow",
+              marginTop:positionButton,
               width: 350,
               height: 50,
               borderRadius: 5,
@@ -76,9 +99,9 @@ const ContinueWithGmailAndPasswors = () => {
           >
             Log In
         </Button>
-      </View>
+      </Animated.View>
+     </>
   )
 }
 
-export default ContinueWithGmailAndPasswors
 
