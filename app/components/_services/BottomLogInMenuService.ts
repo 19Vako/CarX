@@ -1,25 +1,33 @@
+import { auth } from "@/firebaseConfig";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
+import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 import { useEffect } from "react";
+
 
 WebBrowser.maybeCompleteAuthSession();
 
 export function useBottomLogInMenuService() {
+
   const [request, response, promptAsync] = Google.useAuthRequest({
-    iosClientId:
-      "561248963797-ng585ieq3ael47icplmhdll0gbnl52p1.apps.googleusercontent.com",
-    androidClientId:
-      "561248963797-pcdcc4oskmk8i6ca0176v2heceliv55p.apps.googleusercontent.com",
-  });
+    webClientId: "745026637842-4kug0ba85p74saj136eq1d0vfigllprf.apps.googleusercontent.com",
+    iosClientId: "745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1.apps.googleusercontent.com",
+    androidClientId: "745026637842-4a8cep5v5unkc2l39s2gk17q49n13eas.apps.googleusercontent.com"
+  })
 
-  useEffect(() => {
-    if (response?.type === "success") {
-      const { authentication } = response;
-      console.log("Google token:", authentication?.accessToken);
+  useEffect(() =>{
+    if(response?.type === "success"){
+      const { authentication } = response
+      const token = authentication?.accessToken
+      handleContinueWithGoogle(token!)
     }
-  }, [response]);
+  },[response])
 
-
+  const handleContinueWithGoogle = async (token:string) => {
+    const credential = GoogleAuthProvider.credential(null, token);
+    await signInWithCredential(auth, credential);
+  }
+  
   return {
     promptAsync,
   };
