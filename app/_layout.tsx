@@ -1,11 +1,9 @@
 import * as Font from "expo-font";
 import { Provider } from "react-redux";
+import store from "../store/store";
 import RootStack from "./RootStack";
-import store from "./store/store";
-
 
 export default function App() {
-  
   const [fontsLoaded] = Font.useFonts({
     "SpaceMono-Regular": require("@/assets/fonts/SpaceMono-Regular.ttf"),
     "Roboto-Medium": require("@/assets/fonts/Roboto-Medium.ttf"),
@@ -15,10 +13,8 @@ export default function App() {
   }
 
   return (
-   <Provider store={store}>
-     <RootStack/>
-   </Provider>
-    
-
+    <Provider store={store}>
+      <RootStack />
+    </Provider>
   );
 }
