@@ -9,7 +9,11 @@ import {
 } from "react-native";
 import { ConfirmNumberCodeViewModel } from "../_viewsModels/ConfirmNumberCodeViewModel";
 
-export default function ConfirmNumberCode({isVisible = false}: {isVisible: boolean}) {
+export default function ConfirmNumberCode({
+  isVisible = false,
+}: {
+  isVisible: boolean;
+}) {
   const {
     code,
     inputRef,
@@ -46,7 +50,6 @@ export default function ConfirmNumberCode({isVisible = false}: {isVisible: boole
               onBlur={handleInputBlur}
             />
           </TouchableOpacity>
-
         </View>
       </View>
     </Modal>

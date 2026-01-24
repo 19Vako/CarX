@@ -54,15 +54,14 @@ const SplashScreen = () => {
           style={[
             {
               position: "absolute",
-
               fontFamily: "Roboto-Medium",
               fontSize: logoAnimation.interpolate({
                 inputRange: [0, 1],
-                outputRange: [1, 2],
-              }),
-              opacity: logoAnimation.interpolate({
-                inputRange: [0, 1],
                 outputRange: [0, 1],
+              }),
+              color: logoAnimation.interpolate({
+                inputRange: [0, 154],
+                outputRange: ["yellow", "black"], 
               }),
             },
           ]}

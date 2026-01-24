@@ -21,7 +21,7 @@ export function ConfirmNumberCodeViewModel(CODE_LENGTH = 6) {
 
     if (confirmCode.length === CODE_LENGTH) {
       handleConfirmCode(confirmCode);
-      
+
       inputRef.current?.blur();
     }
   };

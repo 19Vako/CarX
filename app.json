@@ -5,7 +5,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "carX",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
     "androidStatusBar": {
@@ -25,18 +29,24 @@
       "infoPlist": {
         "CFBundleURLTypes": [
           {
-            "CFBundleURLSchemes": ["carX"]
+            "CFBundleURLSchemes": [
+              "carX"
+            ]
           },
           {
-            "CFBundleURLSchemes": ["carX"]
+            "CFBundleURLSchemes": [
+              "carX"
+            ]
           }
         ],
         "ITSAppUsesNonExemptEncryption": false
       }
     },
-
     "android": {
-      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
       "googleServicesFile": "./google-services.json",
       "package": "com.sergii.carX",
       "adaptiveIcon": {
@@ -48,7 +58,6 @@
         "appAuthRedirectScheme": "carX"
       }
     },
-
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -72,7 +81,8 @@
         }
       ],
       "expo-web-browser",
-      "expo-secure-store"
+      "expo-secure-store",
+      "sentry-expo"
     ],
     "experiments": {
       "typedRoutes": true

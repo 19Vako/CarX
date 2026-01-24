@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Animated } from "react-native";
 import { Button, IconButton, TextInput } from "react-native-paper";
-import { ContinueWithGmailAndPassworsModel } from "../_viewsModels/ContinueWithGmailAndPassworsModel";
+import { ContinueWithGmailAndPassworsViewModel } from "../_viewsModels/ContinueWithGmailAndPassworsViewModel";
 
 export default function ContinueWithGmailAndPasswors({
   handleView,
@@ -11,7 +11,7 @@ export default function ContinueWithGmailAndPasswors({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { heightAnimation, positionButton } =
-    ContinueWithGmailAndPassworsModel();
+    ContinueWithGmailAndPassworsViewModel();
 
   return (
     <>

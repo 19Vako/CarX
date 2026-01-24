@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 
 export function useContinueWithGmailAndPasswors() {
   const navigation = useNavigation();
-  
+
   const signIn = async (email: string, password: string) => {
     try {
       const userCredential = await signInWithEmailAndPassword(

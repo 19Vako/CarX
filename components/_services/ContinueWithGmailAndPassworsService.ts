@@ -1,7 +1,7 @@
 import { useContinueWithGmailAndPasswors } from "@/hooks/useContinueWithGmailAndPasswors";
 
 export function ContinueWithGmailAndPassworsService() {
-  const { signIn } = useContinueWithGmailAndPasswors()
+  const { signIn } = useContinueWithGmailAndPasswors();
 
   return {
     signIn,
