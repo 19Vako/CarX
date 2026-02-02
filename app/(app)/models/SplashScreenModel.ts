@@ -28,8 +28,8 @@ export function SplashViewModel() {
         duration: 300,
         useNativeDriver: false,
       }),
-    ]).start()
-  });
+    ]).start();
+  },[]);
 
   return {
     carAnimation,

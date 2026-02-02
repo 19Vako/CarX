@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import { Animated, Text, View } from "react-native";
 import normalize from "react-native-normalize";
 import { Button, IconButton, TextInput } from "react-native-paper";
-import { BottomLogInMenuModel } from "../_viewsModels/BottomLogInMenuModel";
+import { BottomLogInMenuViewModel } from "../_viewsModels/BottomLogInMenuViewModel";
+import ConfirmNumberCode from "./ConfirmNumberCode";
+import CountryCodeSelect from "./CountryCodeSelect";
 
 export default function BottomLogInMenu({
   handleView,
 }: {
   handleView: (View: "Gmail_Password_View" | "Welcome_View") => void;
 }) {
-  const [email, setEmail] = useState("");
-  const { heightAnimation, handleContinueWithGoogle, ContinueWithApple, handleContinueWithFacebook } =
-    BottomLogInMenuModel();
+  const {
+    heightAnimation,
+    handleContinueWithGoogle,
+    ContinueWithApple,
+    handleContinueWithFacebook,
+    handleSendCode_,
+    phone,
+    setPhone,
+    isVisible,
+    countryTextCode,
+    countryCode,
+    setCountryTextCode,
+    setCountryCode,
+  } = BottomLogInMenuViewModel();
+
 
   return (
     <Animated.View
@@ -38,32 +52,53 @@ export default function BottomLogInMenu({
         Welcome to CarX
       </Text>
 
-      <TextInput
-        label="Email"
-        mode="outlined"
-        value={email}
-        textColor="white"
-        activeOutlineColor="white"
-        theme={{
-          colors: {
-            onSurfaceVariant: "white",
-          },
-        }}
-        keyboardType="email-address"
-        autoCapitalize="none"
-        textContentType="emailAddress"
-        autoComplete="email"
+      <View
         style={{
-          width: 350,
           height: 50,
-          margin: 15,
-          fontSize: 20,
-          backgroundColor: "#424d57",
+          width: 350,
+          marginTop: 10,
+          alignItems: "flex-end",
+          justifyContent: "space-between",
+          flexDirection: "row",
         }}
-        onChangeText={(email) => setEmail(email)}
-      />
+      >
+        <CountryCodeSelect
+          countryTextCode={countryTextCode}
+          setCountryTextCode={setCountryTextCode}
+          setCountryCode={setCountryCode}
+          countryCode={countryCode}
+        />
+        <TextInput
+          label="Phone number"
+          mode="outlined"
+          value={phone}
+          textColor="white"
+          activeOutlineColor="white"
+          outlineColor="gray"
+          theme={{
+            colors: {
+              onSurfaceVariant: "white",
+            },
+          }}
+          outlineStyle={{
+            borderWidth: 0.3,
+          }}
+          keyboardType="phone-pad"
+          textContentType="telephoneNumber"
+          autoComplete="tel"
+          autoCapitalize="none"
+          style={{
+            width: 250,
+            height: 50,
+            fontSize: 20,
+            backgroundColor: "#424d57",
+          }}
+          onChangeText={setPhone}
+        />
+      </View>
 
       <>
+        <ConfirmNumberCode isVisible={isVisible} />
         <Button
           style={{
             backgroundColor: "yellow",
@@ -71,7 +106,8 @@ export default function BottomLogInMenu({
             height: 50,
             borderRadius: 5,
             margin: 10,
-            borderColor: "white",
+            borderWidth: 0.3,
+            borderColor: "gray",
           }}
           contentStyle={{
             height: 50,
@@ -80,6 +116,7 @@ export default function BottomLogInMenu({
           icon="login"
           mode="outlined"
           textColor="#424d57"
+          onPress={handleSendCode_}
         >
           Log In
         </Button>

@@ -1,26 +1,23 @@
 import { Stack } from "expo-router";
+import { useAuthSession } from "../hooks/useAuthSession";
 import SplashScreen from "./(app)/SplashScreen";
-import { useAuthSession } from "./hooks/useAuthSession";
 
 export default function RootStack() {
   const { isLoading, isAuthenticated } = useAuthSession();
 
-   if(isLoading) {
-      return <SplashScreen/>
-   }
-  
-   return (
-      <Stack screenOptions={{headerShown:false}}>
-         
-         <Stack.Protected guard={!isAuthenticated}>
-            <Stack.Screen name="(app)/index" />
-         </Stack.Protected>
+  if (isLoading) {
+    return <SplashScreen />;
+  }
 
-         <Stack.Protected guard={isAuthenticated}>
-            <Stack.Screen name="(auth)/index" />
-         </Stack.Protected> 
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Protected guard={isAuthenticated}>
+        <Stack.Screen name="(app)/index" />
+      </Stack.Protected>
 
-      </Stack>
-   )
-  
+      <Stack.Protected guard={!isAuthenticated}>
+        <Stack.Screen name="(auth)/index" />
+      </Stack.Protected>
+    </Stack>
+  );
 }

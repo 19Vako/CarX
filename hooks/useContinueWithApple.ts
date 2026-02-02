@@ -1,6 +1,4 @@
-
-
-export async function useContinueWithApple () {
+export async function useContinueWithApple() {
   /*  try {
     const { identityToken } = await AppleAuthentication.signInAsync({
       requestedScopes: [
@@ -21,4 +19,4 @@ export async function useContinueWithApple () {
    catch (err) {
     console.log(err)
    } */
-} 
+}

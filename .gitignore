@@ -1,5 +1,8 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
+#.env
+.env
+
 # dependencies
 node_modules/
 
@@ -39,4 +42,8 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-app-example
+# FireBase
+GoogleService-Info.plist
+google-services.json
+
+

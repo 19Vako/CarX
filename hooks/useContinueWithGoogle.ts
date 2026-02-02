@@ -14,7 +14,7 @@ export function useContinueWithGoogle() {
 
   const handleContinueWithGoogle = async () => {
     try {
-      const response = await promptAsync()
+      const response = await promptAsync();
 
       if (response?.type !== "success") {
         console.log("Google login failed or was cancelled:", response.type);
@@ -32,6 +32,6 @@ export function useContinueWithGoogle() {
   };
 
   return {
-    handleContinueWithGoogle
+    handleContinueWithGoogle,
   };
 }

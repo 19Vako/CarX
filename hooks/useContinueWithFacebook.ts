@@ -9,12 +9,11 @@ import {
 WebBrowser.maybeCompleteAuthSession();
 
 export function useContinueWithFacebook() {
-
   const [request, response, promptAsync] = AuthSession.useAuthRequest(
     {
       clientId: process.env.EXPO_PUBLIC_FACEBOOK_APP_ID!,
       scopes: ["public_profile", "email"],
-      redirectUri: AuthSession.makeRedirectUri({path: "auth", })
+      redirectUri: AuthSession.makeRedirectUri({ path: "auth" }),
     },
     {
       authorizationEndpoint: process.env.EXPO_PUBLIC_FACEBOOK_ENDPOINT,
@@ -37,12 +36,12 @@ export function useContinueWithFacebook() {
         return null;
       }
 
-      const facebookCredential = FacebookAuthProvider.credential(facebookAccessToken);
+      const facebookCredential =
+        FacebookAuthProvider.credential(facebookAccessToken);
 
       const auth = getAuth();
 
       await signInWithCredential(auth, facebookCredential);
-
     } catch (err) {
       console.error(err);
       return null;

@@ -2,7 +2,7 @@ import { useKeyboardVisibility } from "@/hooks/useKeyboardVisibility";
 import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 
-export function ContinueWithGmailAndPassworsModel() {
+export function ContinueWithGmailAndPassworsViewModel() {
   const { keyBoardVisible } = useKeyboardVisibility();
   const heightAnimation = useRef(new Animated.Value(300)).current;
   const positionButton = useRef(new Animated.Value(140)).current;
