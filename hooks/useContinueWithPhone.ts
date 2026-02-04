@@ -1,3 +1,4 @@
+import { LogService } from "@/utils/LogService";
 import {
   ConfirmationResult,
   getAuth,
@@ -12,29 +13,35 @@ export function useContinueWithPhone() {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleSendCode = async (number: string) => {
-    console.log(number)
     try {
       const response = await signInWithPhoneNumber(getAuth(), number);
       setConfirmationResult(response);
       setIsVisible(true);
-      console.log(response);
     } catch (err) {
-      console.error(err);
+      LogService.error(err, "phone_auth", {
+        stage: "send_code",
+        err: "send code error",
+      });
       setConfirmationResult(null);
-      return null;
     }
   };
 
   const handleConfirmCode = async (code: string) => {
     if (!confirmationResult) {
-      console.error("You shoud to get SMS");
-      return null;
+      LogService.warn("You shoud to get SMS", "phone_auth", {
+        stage: "confirm_code",
+        err: "No confirmation result",
+      });
+      return;
     }
     setIsConfirmCodeLoading(true);
     try {
       await confirmationResult.confirm(code);
     } catch (err) {
-      console.error(err);
+      LogService.error(err, "phone_auth", {
+        stage: "confirm_code",
+        err: "confirmation result error",
+      });
     } finally {
       setIsConfirmCodeLoading(false);
     }

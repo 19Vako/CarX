@@ -7,26 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EBFD871001A9866DDD0C6D0 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E126C044D73DA983316283 /* ExpoModulesProvider.swift */; };
+		0435928679BDC76A3FFE1A37 /* libPods-carX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A27F2CA96379108BA170C2 /* libPods-carX.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		9D07A7C56EFADC456574D7A5 /* libPods-carX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9EA22BAD01D778B899B0BA /* libPods-carX.a */; };
+		8411FE9F007099AC7DA6C05F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BD464DE64871481D51BE040B /* PrivacyInfo.xcprivacy */; };
+		84A5E67CECF6421A898BF42A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EB061ECC0D14DEABDDBEA24 /* GoogleService-Info.plist */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		D26793A53B77E03B14934A2A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2043A1E6F31A1BAD44111EBF /* PrivacyInfo.xcprivacy */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
+		FA3225A40A43D4CB8EDA80A7 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633F8897A4B5B1EB9A23878 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1230118F5720534A481CDA49 /* Pods-carX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carX.release.xcconfig"; path = "Target Support Files/Pods-carX/Pods-carX.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* carX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = carX/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = carX/Info.plist; sourceTree = "<group>"; };
-		2043A1E6F31A1BAD44111EBF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = carX/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		7AF212FB584C59D726EC9930 /* Pods-carX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carX.release.xcconfig"; path = "Target Support Files/Pods-carX/Pods-carX.release.xcconfig"; sourceTree = "<group>"; };
-		A7E126C044D73DA983316283 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-carX/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		15A27F2CA96379108BA170C2 /* libPods-carX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-carX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2633F8897A4B5B1EB9A23878 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-carX/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		3EB061ECC0D14DEABDDBEA24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "carX/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6521680FC474B566FE031BDF /* Pods-carX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carX.debug.xcconfig"; path = "Target Support Files/Pods-carX/Pods-carX.debug.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = carX/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		C89254C6931A8FFD60D26B7C /* Pods-carX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carX.debug.xcconfig"; path = "Target Support Files/Pods-carX/Pods-carX.debug.xcconfig"; sourceTree = "<group>"; };
-		EC9EA22BAD01D778B899B0BA /* libPods-carX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-carX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD464DE64871481D51BE040B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = carX/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = carX/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* carX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "carX-Bridging-Header.h"; path = "carX/carX-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -37,23 +39,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D07A7C56EFADC456574D7A5 /* libPods-carX.a in Frameworks */,
+				0435928679BDC76A3FFE1A37 /* libPods-carX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FA3C1EC62DA1566EE414513 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C89254C6931A8FFD60D26B7C /* Pods-carX.debug.xcconfig */,
-				7AF212FB584C59D726EC9930 /* Pods-carX.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* carX */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +55,8 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				2043A1E6F31A1BAD44111EBF /* PrivacyInfo.xcprivacy */,
+				3EB061ECC0D14DEABDDBEA24 /* GoogleService-Info.plist */,
+				BD464DE64871481D51BE040B /* PrivacyInfo.xcprivacy */,
 			);
 			name = carX;
 			sourceTree = "<group>";
@@ -72,17 +65,17 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				EC9EA22BAD01D778B899B0BA /* libPods-carX.a */,
+				15A27F2CA96379108BA170C2 /* libPods-carX.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5334BBD333D3EEE3D6B2776E /* ExpoModulesProviders */ = {
+		48E778A8F9F6E98645BA7E41 /* carX */ = {
 			isa = PBXGroup;
 			children = (
-				A7AE36CEACE91D91C5EC6513 /* carX */,
+				2633F8897A4B5B1EB9A23878 /* ExpoModulesProvider.swift */,
 			);
-			name = ExpoModulesProviders;
+			name = carX;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -99,8 +92,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				0FA3C1EC62DA1566EE414513 /* Pods */,
-				5334BBD333D3EEE3D6B2776E /* ExpoModulesProviders */,
+				8F41EE3E370E9C6E440ADCDC /* Pods */,
+				94B444D31A87F0AFE7C3DB3B /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,12 +108,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A7AE36CEACE91D91C5EC6513 /* carX */ = {
+		8F41EE3E370E9C6E440ADCDC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7E126C044D73DA983316283 /* ExpoModulesProvider.swift */,
+				6521680FC474B566FE031BDF /* Pods-carX.debug.xcconfig */,
+				1230118F5720534A481CDA49 /* Pods-carX.release.xcconfig */,
 			);
-			name = carX;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		94B444D31A87F0AFE7C3DB3B /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				48E778A8F9F6E98645BA7E41 /* carX */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -140,13 +142,14 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "carX" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				62BBDC884E7326EF53F9E991 /* [Expo] Configure project */,
+				6397DC7D453482EF6F1AF8F1 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				FAB87E06B9F3DDD866137B0E /* [CP] Embed Pods Frameworks */,
+				6EE969FED8954D049529F39A /* Upload Debug Symbols to Sentry */,
+				E344B4E6A016203992369F70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +199,8 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				D26793A53B77E03B14934A2A /* PrivacyInfo.xcprivacy in Resources */,
+				84A5E67CECF6421A898BF42A /* GoogleService-Info.plist in Resources */,
+				8411FE9F007099AC7DA6C05F /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios absolute | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n# Source .xcode.env.updates if it exists to allow\n# SKIP_BUNDLING to be unset if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.updates\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.updates\"\nfi\n# Source local changes to allow overrides\n# if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n`\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n\n";
+			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios absolute | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n# Source .xcode.env.updates if it exists to allow\n# SKIP_BUNDLING to be unset if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.updates\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.updates\"\nfi\n# Source local changes to allow overrides\n# if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n/bin/sh `\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('@sentry/react-native/package.json')) + '/scripts/sentry-xcode.sh'\"` `\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n\n";
 		};
 		08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -242,7 +246,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		62BBDC884E7326EF53F9E991 /* [Expo] Configure project */ = {
+		6397DC7D453482EF6F1AF8F1 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -265,6 +269,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-carX/expo-configure-project.sh\"\n";
+		};
+		6EE969FED8954D049529F39A /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh `${NODE_BINARY:-node} --print \"require('path').dirname(require.resolve('@sentry/react-native/package.json')) + '/scripts/sentry-xcode-debug-files.sh'\"`";
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -293,6 +311,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/React-Core_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact/React-cxxreact_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Sentry/Sentry.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/expo-dev-launcher/EXDevLauncher.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/expo-dev-menu/EXDevMenu.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/react-native-maps/ReactNativeMapsPrivacy.bundle",
@@ -319,6 +338,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-Core_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-cxxreact_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SDWebImage.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Sentry.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXDevLauncher.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXDevMenu.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ReactNativeMapsPrivacy.bundle",
@@ -328,7 +348,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-carX/Pods-carX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FAB87E06B9F3DDD866137B0E /* [CP] Embed Pods Frameworks */ = {
+		E344B4E6A016203992369F70 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,7 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				0EBFD871001A9866DDD0C6D0 /* ExpoModulesProvider.swift in Sources */,
+				FA3225A40A43D4CB8EDA80A7 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +387,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C89254C6931A8FFD60D26B7C /* Pods-carX.debug.xcconfig */;
+			baseConfigurationReference = 6521680FC474B566FE031BDF /* Pods-carX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -380,6 +400,7 @@
 				);
 				INFOPLIST_FILE = carX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,7 +424,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AF212FB584C59D726EC9930 /* Pods-carX.release.xcconfig */;
+			baseConfigurationReference = 1230118F5720534A481CDA49 /* Pods-carX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

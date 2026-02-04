@@ -5,7 +5,6 @@ import { Button, TextInput } from "react-native-paper";
 export default function RegistrationForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [secure, setSecure] = useState(true);
 
   return (
     <View style={{ display: "flex", alignItems: "center" }}>
@@ -43,7 +42,7 @@ export default function RegistrationForm() {
             onSurfaceVariant: "#bbbbbb",
           },
         }}
-        secureTextEntry={secure}
+        secureTextEntry={true}
         textContentType="password"
         autoComplete="password"
         onChangeText={(email) => setPassword(email)}

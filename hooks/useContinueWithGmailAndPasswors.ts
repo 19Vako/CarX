@@ -1,4 +1,5 @@
-import { auth } from "@/firebaseConfig";
+import { auth } from "@/configs/firebaseConfig";
+import { LogService } from "@/utils/LogService";
 import { useNavigation } from "@react-navigation/native";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -14,10 +15,13 @@ export function useContinueWithGmailAndPasswors() {
       );
       const user = userCredential.user;
       navigation.navigate("Account" as never);
-      console.log("Пользователь создан:", user.uid);
+      console.log("User was created:", user.uid);
       return user;
     } catch (error: any) {
-      console.error("Ошибка регистрации:", error.message);
+      LogService.error(error, "sign_in_with_email", {
+        stage: "signInWithEmailAndPassword",
+        err: "sign_in_with_email_error",
+      });
       throw error;
     }
   };

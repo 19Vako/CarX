@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import { useAuthSession } from "../hooks/useAuthSession";
 import SplashScreen from "./(app)/SplashScreen";
 
-export default function RootStack() {
+function RootStack() {
   const { isLoading, isAuthenticated } = useAuthSession();
 
   if (isLoading) {
@@ -21,3 +21,5 @@ export default function RootStack() {
     </Stack>
   );
 }
+
+export default RootStack;
