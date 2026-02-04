@@ -28,12 +28,8 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>carX</string>
-        </array>
-      </dict>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>carX</string>
+          <string>com.sergii.carX</string>
+          <string>com.googleusercontent.apps.745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1</string>
         </array>
       </dict>
       <dict>

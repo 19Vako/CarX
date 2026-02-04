@@ -1,7 +1,7 @@
 export interface UserState {
   uid: string | null;
   name: string | null;
-  email: string | null; // ← исправлено
+  email: string | null;
   photoURL?: string | null;
 }
 

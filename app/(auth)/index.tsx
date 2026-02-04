@@ -1,4 +1,5 @@
 import RegistrationAnimatedView from "@/components/_views/RegistrationAnimatedView";
+
 import React from "react";
 import { View } from "react-native";
 import { RegistrationModel } from "../(app)/models/RegistrationModel";

@@ -1,4 +1,4 @@
-import { auth } from "@/firebaseConfig";
+import { auth } from "@/configs/firebaseConfig";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -25,13 +25,13 @@ export function useAuthSession() {
         dispatch(logOutUser());
         setIsAuthenticated(false);
       }
-      await setTimeout(() => {
+      setTimeout(() => {
         setIsLoading(false);
       }, 3000);
     });
 
     return () => unsubscribe();
-  });
+  }, []);
 
   return {
     isLoading,

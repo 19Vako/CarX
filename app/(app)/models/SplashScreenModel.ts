@@ -4,7 +4,9 @@ import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 export function SplashViewModel() {
   const carAnimation = useRef(new Animated.ValueXY({ x: -100, y: 0 })).current;
   const logoAnimation = useRef(new Animated.Value(1)).current;
-  const pointPosition = useRef(new Animated.ValueXY({ x: 0, y: -1000 })).current;
+  const pointPosition = useRef(
+    new Animated.ValueXY({ x: 0, y: -1000 }),
+  ).current;
 
   useEffect(() => {
     Animated.sequence([
@@ -29,7 +31,7 @@ export function SplashViewModel() {
         useNativeDriver: false,
       }),
     ]).start();
-  },[]);
+  }, []);
 
   return {
     carAnimation,

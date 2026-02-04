@@ -17,12 +17,9 @@ export function BottomLogInMenuViewModel() {
   const [countryCode, setCountryCode] = useState("380");
   const [phone, setPhone] = useState("");
 
-  
   const handleSendCode_ = () => {
-    console.log("dnkfmlc")
     handleSendCode(`+${countryCode}${phone}`);
   };
-
 
   const { keyBoardVisible } = useKeyboardVisibility();
   const heightAnimation = useRef(new Animated.Value(300)).current;

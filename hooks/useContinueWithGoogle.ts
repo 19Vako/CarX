@@ -1,33 +1,39 @@
-import { auth } from "@/firebaseConfig";
-import * as Google from "expo-auth-session/providers/google";
-import * as WebBrowser from "expo-web-browser";
+import { auth } from "@/configs/firebaseConfig";
+import { LogService } from "@/utils/LogService";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 
-WebBrowser.maybeCompleteAuthSession();
+GoogleSignin.configure({
+  webClientId: process.env.EXPO_PUBLIC_WEB_CLIENT_ID,
+  iosClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID,
+  offlineAccess: true,
+});
 
 export function useContinueWithGoogle() {
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    webClientId: process.env.EXPO_PUBLIC_WEB_CLIENT_ID,
-    iosClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID,
-    androidClientId: process.env.EXPO_PUBLIC_ANDROID_CLIENT_ID,
-  });
-
   const handleContinueWithGoogle = async () => {
     try {
-      const response = await promptAsync();
+      await GoogleSignin.hasPlayServices();
+      const response = await GoogleSignin.signIn();
+      const idToken = response.data?.idToken;
 
-      if (response?.type !== "success") {
-        console.log("Google login failed or was cancelled:", response.type);
-        return null;
+      if (!idToken) {
+        LogService.error(
+          "No ID token returned from Google Sign-In",
+          "Google_Auth",
+          {
+            stage: "handleContinueWithGoogle",
+          },
+        );
+        return;
       }
 
-      const token = response.authentication?.accessToken;
-
-      const credential = GoogleAuthProvider.credential(null, token);
+      const credential = GoogleAuthProvider.credential(idToken);
       await signInWithCredential(auth, credential);
-    } catch (error) {
-      console.error(error);
-      return null;
+    } catch (err) {
+      LogService.error(err, "Google_Auth", {
+        stage: "handleContinueWithGoogle",
+        err: `${err}`,
+      });
     }
   };
 

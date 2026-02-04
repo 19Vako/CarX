@@ -26,7 +26,6 @@ export default function BottomLogInMenu({
     setCountryCode,
   } = BottomLogInMenuViewModel();
 
-
   return (
     <Animated.View
       style={{

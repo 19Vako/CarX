@@ -5,11 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "carX",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
     "androidStatusBar": {
@@ -22,31 +18,29 @@
       "barStyle": "dark-content",
       "backgroundColor": "#808080"
     },
+
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sergii.carX",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "scheme": "com.sergii.carX",
       "icon": "./assets/images/favicon.png",
       "infoPlist": {
         "CFBundleURLTypes": [
           {
             "CFBundleURLSchemes": [
-              "carX"
-            ]
-          },
-          {
-            "CFBundleURLSchemes": [
-              "carX"
+              "carX",
+              "com.sergii.carX",
+              "com.googleusercontent.apps.745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1"
             ]
           }
         ],
+
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "permissions": [
-        "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION"
-      ],
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
       "googleServicesFile": "./google-services.json",
       "package": "com.sergii.carX",
       "adaptiveIcon": {
@@ -80,9 +74,17 @@
           "iosUrlScheme": "com.googleusercontent.apps.561248963797-ng585ieq3ael47icplmhdll0gbnl52p1"
         }
       ],
-      "expo-web-browser",
       "expo-secure-store",
-      "sentry-expo"
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "carx",
+          "organization": "ggroup"
+        }
+      ],
+      "@sentry/react-native",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
