@@ -5,13 +5,8 @@ import { CountryCode } from "react-native-country-picker-modal";
 import { BottomLogInMenuService } from "../_services/BottomLogInMenuService";
 
 export function BottomLogInMenuViewModel() {
-  const {
-    handleContinueWithGoogle,
-    ContinueWithApple,
-    handleContinueWithFacebook,
-    handleSendCode,
-    isVisible,
-  } = BottomLogInMenuService();
+  const { handleContinueWithGoogle, handleSendCode, isVisible } =
+    BottomLogInMenuService();
 
   const [countryTextCode, setCountryTextCode] = useState<CountryCode>("UA");
   const [countryCode, setCountryCode] = useState("380");
@@ -34,8 +29,6 @@ export function BottomLogInMenuViewModel() {
   return {
     heightAnimation,
     handleContinueWithGoogle,
-    ContinueWithApple,
-    handleContinueWithFacebook,
     handleSendCode_,
     phone,
     setPhone,

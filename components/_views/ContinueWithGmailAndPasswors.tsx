@@ -10,7 +10,7 @@ export default function ContinueWithGmailAndPasswors({
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { heightAnimation, positionButton } =
+  const { heightAnimation, logIn, positionButton } =
     ContinueWithGmailAndPassworsViewModel();
 
   return (
@@ -70,6 +70,7 @@ export default function ContinueWithGmailAndPasswors({
           label="Password"
           mode="outlined"
           value={password}
+          secureTextEntry={true}
           textColor="white"
           activeOutlineColor="white"
           theme={{
@@ -106,6 +107,7 @@ export default function ContinueWithGmailAndPasswors({
           icon="login"
           mode="outlined"
           textColor="#424d57"
+          onPress={() => logIn(email, password)}
         >
           Log In
         </Button>
