@@ -1,3 +1,4 @@
+import BottomWayMenu from "@/components/_views/BottomWayMenu";
 import { auth } from "@/configs/firebaseConfig";
 import { signOut } from "firebase/auth";
 import React from "react";
@@ -15,13 +16,15 @@ export default function Index() {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View style={{ flex: 1, justifyContent: "center" }}>
       <Button
         style={{ backgroundColor: "gray", padding: 10, borderRadius: 5 }}
         onPress={handlePress}
       >
         <Text style={{ color: "white", fontSize: 16 }}>Out</Text>
       </Button>
+
+      <BottomWayMenu />
     </View>
   );
 }
