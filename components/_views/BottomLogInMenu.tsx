@@ -1,7 +1,8 @@
+import { Icons } from "@/constants/images";
 import React from "react";
-import { Animated, Text, View } from "react-native";
+import { Animated, Image, Text, View } from "react-native";
 import normalize from "react-native-normalize";
-import { Button, IconButton, TextInput } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 import { BottomLogInMenuViewModel } from "../_viewsModels/BottomLogInMenuViewModel";
 import ConfirmNumberCode from "./ConfirmNumberCode";
 import CountryCodeSelect from "./CountryCodeSelect";
@@ -14,8 +15,6 @@ export default function BottomLogInMenu({
   const {
     heightAnimation,
     handleContinueWithGoogle,
-    ContinueWithApple,
-    handleContinueWithFacebook,
     handleSendCode_,
     phone,
     setPhone,
@@ -140,40 +139,55 @@ export default function BottomLogInMenu({
           style={{
             marginTop: 10,
             width: 340,
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
+
+            flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <IconButton
-            icon="apple"
-            size={40}
-            iconColor="white"
-            style={{ backgroundColor: "#424d57", borderRadius: 10 }}
-            onPress={ContinueWithApple}
-          />
-          <IconButton
-            icon="google"
-            size={40}
-            iconColor="white"
-            style={{ backgroundColor: "#424d57", borderRadius: 10 }}
+          <Button
+            mode="outlined"
+            icon={() => (
+              <Image
+                source={Icons.googleIcon}
+                style={{ width: 20, height: 20 }}
+              />
+            )}
+            buttonColor="#fff"
+            textColor="#000"
+            style={{
+              width: "100%",
+              borderRadius: 25,
+              borderColor: "#424d57",
+              borderWidth: 1,
+              marginBottom: 15,
+            }}
+            contentStyle={{ height: 48 }}
             onPress={handleContinueWithGoogle}
-          />
-          <IconButton
-            icon="facebook"
-            size={40}
-            iconColor="white"
-            style={{ backgroundColor: "#424d57", borderRadius: 10 }}
-            onPress={handleContinueWithFacebook}
-          />
-          <IconButton
-            icon="email"
-            size={40}
-            iconColor="white"
-            style={{ backgroundColor: "#424d57", borderRadius: 10 }}
+          >
+            Continue with Google
+          </Button>
+
+          <Button
+            mode="outlined"
+            buttonColor="#ffffff"
+            textColor="#000000"
+            icon={() => (
+              <Image
+                source={Icons.gmailIcon}
+                style={{ width: 20, height: 20 }}
+              />
+            )}
+            style={{
+              width: "100%",
+              borderRadius: 25,
+              borderWidth: 1,
+              borderColor: "#ddd",
+            }}
+            contentStyle={{ height: 48, justifyContent: "center" }}
             onPress={() => handleView("Gmail_Password_View")}
-          />
+          >
+            Sign up with email
+          </Button>
         </View>
       </>
     </Animated.View>

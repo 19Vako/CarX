@@ -1,9 +1,11 @@
+import { ContinueWithGmailAndPassworsService } from "@/components/_services/ContinueWithGmailAndPassworsService";
 import { useKeyboardVisibility } from "@/hooks/useKeyboardVisibility";
 import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 
 export function ContinueWithGmailAndPassworsViewModel() {
   const { keyBoardVisible } = useKeyboardVisibility();
+  const { signIn } = ContinueWithGmailAndPassworsService();
   const heightAnimation = useRef(new Animated.Value(300)).current;
   const positionButton = useRef(new Animated.Value(140)).current;
 
@@ -22,8 +24,13 @@ export function ContinueWithGmailAndPassworsViewModel() {
     ]).start();
   }, [keyBoardVisible]);
 
+  const logIn = (email: string, password: string) => {
+    signIn(email, password);
+  };
+
   return {
     heightAnimation,
     positionButton,
+    logIn,
   };
 }

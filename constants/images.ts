@@ -9,4 +9,6 @@ export const Images = {
 export const Icons = {
   taxiCarIcon: require("@/assets/images/car.png"),
   point: require("@/assets/images/point.png"),
+  googleIcon: require("@/assets/images/pngwing.com.png"),
+  gmailIcon: require("@/assets/images/gmail-icon.png"),
 };

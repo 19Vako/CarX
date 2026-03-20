@@ -1,13 +1,17 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { auth } from "@/configs/firebaseConfig";
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Text, View } from "react-native";
+import { Alert, Text, View } from "react-native";
 import { Button } from "react-native-paper";
 
-export default function index() {
+export default function Index() {
   async function handlePress() {
-    await AsyncStorage.removeItem(
-      "firebase:authUser:AIzaSyDOknjaCySh31wgv0k9qbJ-KmAxzd6bPGI:[DEFAULT]",
-    );
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Ошибка при выходе:", error);
+      Alert.alert("Ошибка", "Не удалось выйти из аккаунта.");
+    }
   }
 
   return (
