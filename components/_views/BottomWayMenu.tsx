@@ -1,29 +1,41 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
 import BottomWayMenuModal from "./BottomWayMenuModal";
+import PointFromModal from "./PointFromModal";
 
 export default function BottomWayMenu() {
-  const [modalVisible, setModalVisible] = useState(false);
+  const {
+    modalVisible,
+    setModalVisible,
+    pointTo,
+    pointFrom,
+    fromModalVisible,
+    setFromModalVisible,
+  } = BottomWayMenuViewModel();
 
   return (
     <>
       <View style={styles.container}>
         <View style={styles.addressBlock}>
-          <TouchableOpacity style={styles.row}>
+          <TouchableOpacity
+            onPress={() => setFromModalVisible(true)}
+            style={styles.row}
+          >
             <MaterialCommunityIcons
               name="map-marker-outline"
               size={24}
               color="#fcfcfc"
             />
             <Text style={styles.addressText} numberOfLines={1}>
-              Гагаріна вулиця (Верхній Бистрий)
+              {pointFrom}
             </Text>
           </TouchableOpacity>
 
           <View style={styles.divider} />
 
-          {/* ТУТ ДОБАВЛЕН ЭКШЕН НА ОТКРЫТИЕ МОДАЛКИ */}
           <TouchableOpacity
             style={styles.row}
             onPress={() => setModalVisible(true)}
@@ -34,24 +46,7 @@ export default function BottomWayMenu() {
               size={24}
               color="#fcfcfc"
             />
-            <Text style={styles.addressTextEmpty}>Куда едем?</Text>
-
-            <View style={styles.rightIcons}>
-              <TouchableOpacity style={styles.actionIcon}>
-                <MaterialCommunityIcons
-                  name="map-marker-plus-outline"
-                  size={20}
-                  color="#fcfcfc"
-                />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.actionIcon}>
-                <MaterialCommunityIcons
-                  name="layers-plus"
-                  size={20}
-                  color="#fcfcfc"
-                />
-              </TouchableOpacity>
-            </View>
+            <Text style={styles.addressTextEmpty}>Where are you going?</Text>
           </TouchableOpacity>
         </View>
 
@@ -59,7 +54,7 @@ export default function BottomWayMenu() {
           <MaterialCommunityIcons name="map-marker" size={24} color="#9CA3AF" />
           <View style={styles.historyTextContainer}>
             <Text style={styles.historyText} numberOfLines={2}>
-              Железнодорожная станция Татаров (Тата...ная улица, 7)
+              {pointTo}
             </Text>
           </View>
         </TouchableOpacity>
@@ -68,12 +63,15 @@ export default function BottomWayMenu() {
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
       />
+      <PointFromModal
+        visible={fromModalVisible}
+        onClose={() => setFromModalVisible(false)}
+      />
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  // --- Стили основного экрана ---
   container: {
     position: "absolute",
     bottom: 0,
