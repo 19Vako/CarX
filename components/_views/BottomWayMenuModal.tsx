@@ -1,15 +1,14 @@
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-    KeyboardAvoidingView,
-    Modal,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -21,16 +20,6 @@ export default function BottomWayMenuModal({
   onClose: () => void;
 }) {
   const [destination, setDestination] = useState("");
-
-  const locations = [
-    {
-      id: 1,
-      title: "Железнодорожная станция Татаров",
-      subtitle: "83.4 км • Татаров, Ж...нодорожная улица, 7",
-    },
-    { id: 2, title: "Паркинг №1", subtitle: "72.3 км • Урочище Щевки, 1" },
-    { id: 3, title: "Аквапарк Мавка", subtitle: "70.6 км • Урочище Щевки" },
-  ];
   const insets = useSafeAreaInsets();
 
   return (
@@ -55,108 +44,35 @@ export default function BottomWayMenuModal({
             <TouchableOpacity style={styles.headerBtn} onPress={onClose}>
               <Ionicons name="close" size={24} color="#fff" />
             </TouchableOpacity>
-            <Text style={styles.headerTitle}>Маршрут</Text>
-            <TouchableOpacity style={styles.headerBtn}>
-              <Ionicons name="add" size={24} color="#fff" />
+            <Text style={styles.headerTitle}>Where to?</Text>
+            <TouchableOpacity
+              style={styles.headerYellowBtn}
+              onPress={() => onClose()}
+            >
+              <Ionicons name="checkmark" size={24} color="#000" />
             </TouchableOpacity>
           </View>
 
-          {/* Блок адресов */}
           <View style={styles.routeBlock}>
             <View style={styles.routeGraphic}>
               <View
                 style={[styles.dot, { borderColor: "#4A90E2", borderWidth: 4 }]}
               />
-              <View style={styles.dottedLine} />
-              <View
-                style={[
-                  styles.dot,
-                  {
-                    borderColor: "#fff",
-                    borderWidth: 4,
-                    backgroundColor: "#222730",
-                  },
-                ]}
-              />
             </View>
 
             <View style={styles.routeInputs}>
               <View style={styles.inputContainer}>
-                <Text style={styles.inputText} numberOfLines={1}>
-                  Гагаріна вулиця (Верхній Бистри...
-                </Text>
-                <MaterialCommunityIcons name="menu" size={24} color="#9CA3AF" />
-              </View>
-              <View style={styles.routeDivider} />
-              <View style={styles.inputContainer}>
                 <TextInput
                   style={styles.textInput}
-                  placeholder="Место назначения"
+                  placeholder="Where to?"
                   placeholderTextColor="#9CA3AF"
                   value={destination}
                   onChangeText={setDestination}
                   autoFocus={true}
                 />
-                <MaterialCommunityIcons name="menu" size={24} color="#9CA3AF" />
               </View>
             </View>
           </View>
-
-          {/* Контент списка */}
-          <ScrollView
-            style={styles.listContainer}
-            contentContainerStyle={{ paddingBottom: 20 }} // Доп. отступ снизу для красоты
-          >
-            {/* Теги внутри скролла или над ним */}
-            <View style={{ marginBottom: 15 }}>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                <TouchableOpacity style={styles.tagBtn}>
-                  <Text style={styles.tagText}>Рекомендуемые</Text>
-                  <MaterialCommunityIcons
-                    name="star"
-                    size={16}
-                    color="#fff"
-                    style={{ marginLeft: 5 }}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tagBtn}>
-                  <Text style={styles.tagText}>Подъёмник</Text>
-                  <MaterialCommunityIcons
-                    name="star"
-                    size={16}
-                    color="#fff"
-                    style={{ marginLeft: 5 }}
-                  />
-                </TouchableOpacity>
-              </ScrollView>
-            </View>
-
-            {locations.map((loc) => (
-              <TouchableOpacity key={loc.id} style={styles.listItem}>
-                <MaterialCommunityIcons
-                  name="map-marker"
-                  size={24}
-                  color="#fff"
-                  style={styles.listIcon}
-                />
-                <View style={styles.listItemTextContainer}>
-                  <Text style={styles.listItemTitle}>{loc.title}</Text>
-                  <Text style={styles.listItemSubtitle}>{loc.subtitle}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-
-            <TouchableOpacity style={styles.chooseOnMapBtn}>
-              <View style={styles.chooseOnMapIconWrapper}>
-                <MaterialCommunityIcons
-                  name="map-marker"
-                  size={18}
-                  color="#fff"
-                />
-              </View>
-              <Text style={styles.chooseOnMapText}>Выбрать на карте</Text>
-            </TouchableOpacity>
-          </ScrollView>
         </KeyboardAvoidingView>
       </View>
     </Modal>
@@ -166,8 +82,9 @@ export default function BottomWayMenuModal({
 const styles = StyleSheet.create({
   modalBackground: {
     flex: 1,
-    backgroundColor: "#222730", // Темный фон
+    backgroundColor: "#222730",
   },
+  headerYellowBtn: { backgroundColor: "#FDE047", padding: 8, borderRadius: 12 },
   modalHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
