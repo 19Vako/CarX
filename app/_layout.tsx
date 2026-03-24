@@ -1,3 +1,4 @@
+import "@/location/services/locationTask";
 import * as Sentry from "@sentry/react-native";
 import * as Font from "expo-font";
 import { Text } from "react-native";
