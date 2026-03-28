@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import reactotron from "../configs/ReactotronConfig";
 import userReducer from "./Slices/user/userSlice";
+import location from "./Slices/map/mapSlice"
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    location: location
   },
   enhancers: (getDefaultEnhancers) => {
     return getDefaultEnhancers().concat(reactotron.createEnhancer());
