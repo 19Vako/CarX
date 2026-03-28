@@ -21,7 +21,7 @@ export default function PointFromModal({
   onClose: () => void;
 }) {
   const insets = useSafeAreaInsets();
-  const { fromInputValue, setFromInputValue } = PointFromModalViewModel();
+  const { fromInputValue, setFromInputValue, handleSelectAddress } = PointFromModalViewModel();
 
   return (
     <Modal
@@ -52,7 +52,10 @@ export default function PointFromModal({
 
             <TouchableOpacity
               style={styles.headerYellowBtn}
-              onPress={() => onClose()}
+              onPress={() => {
+                onClose();
+                handleSelectAddress();
+              }}
             >
               <Ionicons name="checkmark" size={24} color="#000" />
             </TouchableOpacity>
