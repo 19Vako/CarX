@@ -3,8 +3,8 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
-import BottomWayMenuModal from "./BottomWayMenuModal";
 import PointFromModal from "./PointFromModal";
+import WhereToModal from "./WhereToModal";
 
 export default function BottomWayMenu() {
   const {
@@ -51,15 +51,23 @@ export default function BottomWayMenu() {
         </View>
 
         <TouchableOpacity style={[styles.row, styles.historyRow]}>
-          <MaterialCommunityIcons name="map-marker" size={24} color="#9CA3AF" />
-          <View style={styles.historyTextContainer}>
-            <Text style={styles.historyText} numberOfLines={2}>
-              {pointTo}
-            </Text>
-          </View>
+          {pointTo && (
+            <>
+              <MaterialCommunityIcons
+                name="map-marker"
+                size={24}
+                color="#9CA3AF"
+              />
+              <View style={styles.historyTextContainer}>
+                <Text style={styles.historyText} numberOfLines={2}>
+                  {pointTo}
+                </Text>
+              </View>
+            </>
+          )}
         </TouchableOpacity>
       </View>
-      <BottomWayMenuModal
+      <WhereToModal
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
       />
