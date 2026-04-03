@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialState, MapState } from "./mapInterfase";
+import { initialState } from "./mapInterfase";
 
 const mapSlice = createSlice({
   name: "map",
@@ -11,12 +11,18 @@ const mapSlice = createSlice({
         state.pickupLocation = action.payload;
       }
     },
-    setCurrentAddress: (state, action: PayloadAction<string>) => {
-      state.currentAddress = action.payload;
+    setPointFrom: (state, action: PayloadAction<string>) => {
+      state.pointFrom = action.payload;
+    },
+    setPointTo: (state, action: PayloadAction<string>) => {
+      state.pointTo = action.payload;
+    },
+    setPointToLocation: (state, action) => {
+      state.pointToLocation = action.payload;
     },
     setManualPickupLocation: (state, action) => {
       state.pickupLocation = action.payload;
-      state.isManualSelection = true;  
+      state.isManualSelection = true;
     },
     setCityName: (state, action: PayloadAction<string>) => {
       state.cityName = action.payload;
@@ -24,9 +30,17 @@ const mapSlice = createSlice({
     resetManualSelection: (state) => {
       state.isManualSelection = false;
       state.pickupLocation = state.userLocation;
-    }
+    },
   },
 });
 
-export const { setUserLocation, setCurrentAddress, setManualPickupLocation, setCityName, resetManualSelection } = mapSlice.actions;
+export const {
+  setUserLocation,
+  setPointFrom,
+  setPointTo,
+  setPointToLocation,
+  setManualPickupLocation,
+  setCityName,
+  resetManualSelection,
+} = mapSlice.actions;
 export default mapSlice.reducer;
