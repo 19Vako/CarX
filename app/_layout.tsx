@@ -1,11 +1,11 @@
+import { initGlobalLocationTracking } from "@/location/positionService";
 import * as Sentry from "@sentry/react-native";
 import * as Font from "expo-font";
-import { Text } from "react-native";
 import { useEffect } from "react";
+import { Text } from "react-native";
 import { Provider } from "react-redux";
 import store from "../store/store";
 import RootStack from "./RootStack";
-import { initGlobalLocationTracking } from "@/location/position";
 
 Sentry.init({
   dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
