@@ -1,3 +1,5 @@
+import { RouteInfo } from "@/types/routeTypes";
+
 export interface MapState {
   userLocation: {
     latitude: number;
@@ -9,6 +11,7 @@ export interface MapState {
   pointFrom: string;
   pointTo: string;
   pointToLocation: { latitude: number; longitude: number } | null;
+  routeData: Omit<RouteInfo, "coordinates"> | null;
 }
 
 export const initialState: MapState = {
@@ -19,4 +22,5 @@ export const initialState: MapState = {
   pointFrom: "",
   pointTo: "",
   pointToLocation: null,
+  routeData: null,
 };

@@ -1,3 +1,4 @@
+import { RouteInfo } from "@/types/routeTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./mapInterfase";
 
@@ -31,6 +32,13 @@ const mapSlice = createSlice({
       state.isManualSelection = false;
       state.pickupLocation = state.userLocation;
     },
+
+    setRouteData: (
+      state,
+      action: PayloadAction<Omit<RouteInfo, "coordinates"> | null>,
+    ) => {
+      state.routeData = action.payload;
+    },
   },
 });
 
@@ -42,5 +50,6 @@ export const {
   setManualPickupLocation,
   setCityName,
   resetManualSelection,
+  setRouteData,
 } = mapSlice.actions;
 export default mapSlice.reducer;
