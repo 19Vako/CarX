@@ -1,4 +1,4 @@
-import { getCoordsFromAddress } from "@/location/geocoding";
+import { getCoordsFromAddress } from "@/location/geocodingService";
 import { setPointTo, setPointToLocation } from "@/store/Slices/map/mapSlice";
 import { RootState } from "@/store/store";
 import { useSafeAreaInsets } from "react-native-safe-area-context";

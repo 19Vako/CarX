@@ -1,7 +1,7 @@
-import { getCoordsFromAddress } from "@/location/geocoding";
+import { getCoordsFromAddress } from "@/location/geocodingService";
 import {
-  setManualPickupLocation,
-  setPointFrom,
+    setManualPickupLocation,
+    setPointFrom,
 } from "@/store/Slices/map/mapSlice";
 import { RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
