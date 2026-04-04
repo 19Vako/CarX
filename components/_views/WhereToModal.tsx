@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React from "react";
 import {
   KeyboardAvoidingView,
   Modal,
@@ -10,17 +10,22 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { WhereToModalViewModel } from "../_viewsModels/WhereToModalViewModel";
 
-export default function BottomWayMenuModal({
+export default function WhereToModal({
   visible,
   onClose,
 }: {
   visible: boolean;
   onClose: () => void;
 }) {
-  const [destination, setDestination] = useState("");
-  const insets = useSafeAreaInsets();
+  const { pointTo, setPointTo, handleSelectDestination, insets } =
+    WhereToModalViewModel();
+
+  const onConfirm = async () => {
+    await handleSelectDestination();
+    onClose();
+  };
 
   return (
     <Modal
@@ -39,7 +44,6 @@ export default function BottomWayMenuModal({
           style={{ flex: 1 }}
           behavior={Platform.OS === "ios" ? "padding" : undefined}
         >
-          {/* Шапка модалки */}
           <View style={styles.modalHeader}>
             <TouchableOpacity style={styles.headerBtn} onPress={onClose}>
               <Ionicons name="close" size={24} color="#fff" />
@@ -47,7 +51,7 @@ export default function BottomWayMenuModal({
             <Text style={styles.headerTitle}>Where to?</Text>
             <TouchableOpacity
               style={styles.headerYellowBtn}
-              onPress={() => onClose()}
+              onPress={onConfirm}
             >
               <Ionicons name="checkmark" size={24} color="#000" />
             </TouchableOpacity>
@@ -66,8 +70,8 @@ export default function BottomWayMenuModal({
                   style={styles.textInput}
                   placeholder="Where to?"
                   placeholderTextColor="#9CA3AF"
-                  value={destination}
-                  onChangeText={setDestination}
+                  value={pointTo}
+                  onChangeText={setPointTo}
                   autoFocus={true}
                 />
               </View>

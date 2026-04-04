@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { getCoordsFromAddress } from "@/location/geocodingService";
+import {
+    setManualPickupLocation,
+    setPointFrom,
+} from "@/store/Slices/map/mapSlice";
+import { RootState } from "@/store/store";
+import { useDispatch, useSelector } from "react-redux";
 
 export function PointFromModalViewModel() {
-  const [fromInputValue, setFromInputValue] = useState(
-    "Гагаріна вулиця (Верхній Бистрий)",
+  const dispatch = useDispatch();
+
+  const { cityName, pointFrom } = useSelector(
+    (state: RootState) => state.location,
   );
 
+  const handleSelectAddress = async () => {
+    const currentCity = cityName || "Ужгород";
+
+    const coords = await getCoordsFromAddress(pointFrom, currentCity);
+
+    if (coords) {
+      dispatch(setManualPickupLocation(coords));
+    }
+  };
+
   return {
-    fromInputValue,
-    setFromInputValue,
+    pointFrom,
+    setPointFrom: (value: string) => dispatch(setPointFrom(value)),
+    handleSelectAddress,
   };
 }

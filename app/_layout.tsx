@@ -1,5 +1,7 @@
+import { initGlobalLocationTracking } from "@/location/positionService";
 import * as Sentry from "@sentry/react-native";
 import * as Font from "expo-font";
+import { useEffect } from "react";
 import { Text } from "react-native";
 import { Provider } from "react-redux";
 import store from "../store/store";
@@ -23,6 +25,9 @@ if (__DEV__) {
 }
 
 export default Sentry.wrap(function App() {
+  useEffect(() => {
+    initGlobalLocationTracking();
+  }, []);
   const [fontsLoaded] = Font.useFonts({
     "SpaceMono-Regular": require("@/assets/fonts/SpaceMono-Regular.ttf"),
     "Roboto-Medium": require("@/assets/fonts/Roboto-Medium.ttf"),

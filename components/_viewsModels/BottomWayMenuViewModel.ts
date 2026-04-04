@@ -1,13 +1,12 @@
+import { RootState } from "@/store/store";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export function BottomWayMenuViewModel() {
+  const { pointFrom, pointTo } = useSelector(
+    (state: RootState) => state.location,
+  );
   const [modalVisible, setModalVisible] = useState(false);
-  const [pointTo, setPointTo] = useState<string>(
-    "Железнодорожная станция Татаров (Тата...ная улица, 7)",
-  );
-  const [pointFrom, setPointFrom] = useState<string>(
-    "Гагаріна вулиця (Верхній Бистрий)",
-  );
   const [fromModalVisible, setFromModalVisible] = useState(false);
 
   return {
