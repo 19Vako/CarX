@@ -1,6 +1,6 @@
+import { Icons } from "@/src/constants/images";
 import { Animated, View } from "react-native";
 import { SplashViewModel } from "../(app)/models/SplashScreenModel";
-import { Icons } from "../../constants/images";
 
 const SplashScreen = () => {
   const { carAnimation, logoAnimation, pointPosition } = SplashViewModel();
@@ -61,7 +61,7 @@ const SplashScreen = () => {
               }),
               color: logoAnimation.interpolate({
                 inputRange: [0, 154],
-                outputRange: ["yellow", "black"], 
+                outputRange: ["yellow", "black"],
               }),
             },
           ]}

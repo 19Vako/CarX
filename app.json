@@ -84,7 +84,16 @@
         }
       ],
       "@sentry/react-native",
-      "expo-font"
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "CarX wants to use your location in the background.",
+          "locationAlwaysPermission": "CarX uses background location tracking to allow drivers to receive orders in the background",
+          "locationWhenInUsePermission": "Allow access to geodata to display your location on the map.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
