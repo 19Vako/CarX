@@ -1,4 +1,4 @@
-import { auth } from "@/configs/firebaseConfig";
+import { auth } from "@/src/configs/firebaseConfig";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";

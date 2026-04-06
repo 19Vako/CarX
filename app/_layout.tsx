@@ -1,10 +1,10 @@
-import { initGlobalLocationTracking } from "@/location/positionService";
+import { initGlobalLocationTracking } from "@/src/location/positionService";
+import store from "@/src/store/store";
 import * as Sentry from "@sentry/react-native";
 import * as Font from "expo-font";
 import { useEffect } from "react";
 import { Text } from "react-native";
 import { Provider } from "react-redux";
-import store from "../store/store";
 import RootStack from "./RootStack";
 
 Sentry.init({
@@ -21,7 +21,7 @@ Sentry.init({
 });
 
 if (__DEV__) {
-  import("../configs/ReactotronConfig");
+  import("@/src/configs/ReactotronConfig");
 }
 
 export default Sentry.wrap(function App() {

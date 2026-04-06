@@ -2,8 +2,8 @@ import {
   setCityName,
   setPointFrom,
   setUserLocation,
-} from "@/store/Slices/map/mapSlice";
-import store from "@/store/store";
+} from "@/src/store/Slices/map/mapSlice";
+import store from "@/src/store/store";
 import * as Location from "expo-location";
 
 export const initGlobalLocationTracking = async () => {

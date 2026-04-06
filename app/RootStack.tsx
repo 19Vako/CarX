@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { useAuthSession } from "../hooks/useAuthSession";
+import { useAuthSession } from "../src/auth/useAuthSession";
 import SplashScreen from "./(app)/SplashScreen";
 
 function RootStack() {

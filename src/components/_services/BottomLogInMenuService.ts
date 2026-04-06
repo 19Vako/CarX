@@ -1,5 +1,5 @@
-import { useContinueWithGoogle } from "@/hooks/useContinueWithGoogle";
-import { useContinueWithPhone } from "@/hooks/useContinueWithPhone";
+import { useContinueWithGoogle } from "@/src/auth/useContinueWithGoogle";
+import { useContinueWithPhone } from "@/src/auth/useContinueWithPhone";
 
 export function BottomLogInMenuService() {
   const { handleContinueWithGoogle } = useContinueWithGoogle();

@@ -1,4 +1,4 @@
-import { useKeyboardVisibility } from "@/hooks/useKeyboardVisibility";
+import { useKeyboardVisibility } from "@/src/hooks/useKeyboardVisibility";
 import { useEffect, useRef, useState } from "react";
 import { Animated } from "react-native";
 import { CountryCode } from "react-native-country-picker-modal";

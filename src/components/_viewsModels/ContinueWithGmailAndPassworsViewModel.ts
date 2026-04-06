@@ -1,5 +1,5 @@
-import { ContinueWithGmailAndPassworsService } from "@/components/_services/ContinueWithGmailAndPassworsService";
-import { useKeyboardVisibility } from "@/hooks/useKeyboardVisibility";
+import { ContinueWithGmailAndPassworsService } from "@/src/components/_services/ContinueWithGmailAndPassworsService";
+import { useKeyboardVisibility } from "@/src/hooks/useKeyboardVisibility";
 import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 

@@ -1,10 +1,10 @@
-import { calculateRoute } from "@/location/routeService";
+import { calculateRoute } from "@/src/location/routeService";
 import {
   setPointTo,
   setPointToLocation,
   setRouteData,
-} from "@/store/Slices/map/mapSlice";
-import { RootState } from "@/store/store";
+} from "@/src/store/Slices/map/mapSlice";
+import { RootState } from "@/src/store/store";
 import * as Location from "expo-location";
 import { useEffect, useRef } from "react";
 import MapView from "react-native-maps";
