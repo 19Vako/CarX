@@ -1,4 +1,4 @@
-import { RouteInfo } from "@/types/routeTypes";
+import { RouteInfo } from "@/src/types/routeTypes";
 
 export const calculateRoute = (result: any): Omit<RouteInfo, "coordinates"> => {
   const rawDistance = result.distance; // Гугл отдает в км

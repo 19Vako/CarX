@@ -1,6 +1,9 @@
-import { getCoordsFromAddress } from "@/location/geocodingService";
-import { setPointTo, setPointToLocation } from "@/store/Slices/map/mapSlice";
-import { RootState } from "@/store/store";
+import { getCoordsFromAddress } from "@/src/location/geocodingService";
+import {
+  setPointTo,
+  setPointToLocation,
+} from "@/src/store/Slices/map/mapSlice";
+import { RootState } from "@/src/store/store";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 

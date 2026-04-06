@@ -1,4 +1,4 @@
-import { LogService } from "@/utils/LogService";
+import { LogService } from "@/src/utils/LogService";
 import {
   ConfirmationResult,
   getAuth,

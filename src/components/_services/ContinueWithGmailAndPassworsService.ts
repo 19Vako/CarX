@@ -1,4 +1,4 @@
-import { useContinueWithGmailAndPasswors } from "@/hooks/useContinueWithGmailAndPasswors";
+import { useContinueWithGmailAndPasswors } from "@/src/auth/useContinueWithGmailAndPasswors";
 
 export function ContinueWithGmailAndPassworsService() {
   const { signIn } = useContinueWithGmailAndPasswors();

@@ -1,9 +1,9 @@
-import { getCoordsFromAddress } from "@/location/geocodingService";
+import { getCoordsFromAddress } from "@/src/location/geocodingService";
 import {
-    setManualPickupLocation,
-    setPointFrom,
-} from "@/store/Slices/map/mapSlice";
-import { RootState } from "@/store/store";
+  setManualPickupLocation,
+  setPointFrom,
+} from "@/src/store/Slices/map/mapSlice";
+import { RootState } from "@/src/store/store";
 import { useDispatch, useSelector } from "react-redux";
 
 export function PointFromModalViewModel() {

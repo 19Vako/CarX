@@ -1,4 +1,4 @@
-import { RouteInfo } from "@/types/routeTypes";
+import { RouteInfo } from "@/src/types/routeTypes";
 
 export interface MapState {
   userLocation: {

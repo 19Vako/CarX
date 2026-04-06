@@ -1,5 +1,5 @@
-import BottomLogInMenu from "@/components/_views/BottomLogInMenu";
-import ContinueWithGmailAndPasswors from "@/components/_views/ContinueWithGmailAndPasswors";
+import BottomLogInMenu from "@/src/components/_views/BottomLogInMenu";
+import ContinueWithGmailAndPasswors from "@/src/components/_views/ContinueWithGmailAndPasswors";
 import React, { useState } from "react";
 
 export function RegistrationModel() {

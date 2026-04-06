@@ -1,4 +1,4 @@
-import { Icons } from "@/constants/images";
+import { Icons } from "@/src/constants/images";
 import React from "react";
 import { Animated, Image, Text, View } from "react-native";
 import normalize from "react-native-normalize";

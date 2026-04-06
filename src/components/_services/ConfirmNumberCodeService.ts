@@ -1,4 +1,4 @@
-import { useContinueWithPhone } from "@/hooks/useContinueWithPhone";
+import { useContinueWithPhone } from "@/src/auth/useContinueWithPhone";
 
 export function ConfirmNumberCodeService() {
   const { handleConfirmCode } = useContinueWithPhone();
