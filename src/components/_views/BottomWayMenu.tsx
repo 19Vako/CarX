@@ -4,6 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
 import PointFromModal from "./PointFromModal";
+import RideTypeModal from "./RideTypeModal";
 import WhereToModal from "./WhereToModal";
 
 export default function BottomWayMenu() {
@@ -13,7 +14,10 @@ export default function BottomWayMenu() {
     pointTo,
     pointFrom,
     fromModalVisible,
+    distance,
     setFromModalVisible,
+    rideTypeModalVisible,
+    setRideTypeModalVisible,
   } = BottomWayMenuViewModel();
 
   return (
@@ -74,6 +78,11 @@ export default function BottomWayMenu() {
       <PointFromModal
         visible={fromModalVisible}
         onClose={() => setFromModalVisible(false)}
+      />
+      <RideTypeModal
+        distance={distance || 0}
+        visible={rideTypeModalVisible}
+        onClose={() => setRideTypeModalVisible(false)}
       />
     </>
   );
