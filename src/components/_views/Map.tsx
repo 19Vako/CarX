@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { setMapRef } from "../_services/MapService";
-import { MapViewModel } from "../_viewsModels/MapViewModel";
+import { MapViewModel } from "../_viewModels/MapViewModel";
 
 export default function Map() {
   const {

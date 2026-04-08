@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import { BottomWayMenuViewModel } from "../_viewsModels/BottomWayMenuViewModel";
+import { BottomWayMenuViewModel } from "../_viewModels/BottomWayMenuViewModel";
 import PointFromModal from "./PointFromModal";
 import RideTypeModal from "./RideTypeModal";
 import WhereToModal from "./WhereToModal";

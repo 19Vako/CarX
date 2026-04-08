@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { ConfirmNumberCodeViewModel } from "../_viewsModels/ConfirmNumberCodeViewModel";
+import { ConfirmNumberCodeViewModel } from "../_viewModels/ConfirmNumberCodeViewModel";
 
 export default function ConfirmNumberCode({
   isVisible = false,

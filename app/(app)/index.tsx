@@ -1,10 +1,10 @@
 import BottomWayMenu from "@/src/components/_views/BottomWayMenu";
+import DrawerButton from "@/src/components/_views/DrawerButton";
 import Map from "@/src/components/_views/Map";
 import { auth } from "@/src/configs/firebaseConfig";
 import { signOut } from "firebase/auth";
 import React from "react";
-import { Alert, Text, View } from "react-native";
-import { Button } from "react-native-paper";
+import { Alert, View } from "react-native";
 
 export default function Index() {
   async function handlePress() {
@@ -18,20 +18,8 @@ export default function Index() {
 
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
-      <Button
-        style={{
-          position: "absolute",
-          zIndex: 4,
-          backgroundColor: "gray",
-          padding: 10,
-          borderRadius: 5,
-        }}
-        onPress={handlePress}
-      >
-        <Text style={{ color: "white", fontSize: 16 }}>Out</Text>
-      </Button>
+      <DrawerButton />
       <Map />
-
       <BottomWayMenu />
     </View>
   );

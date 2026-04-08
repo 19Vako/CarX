@@ -2,7 +2,7 @@ import React from "react";
 import { Animated, Image, View } from "react-native";
 import normalize from "react-native-normalize";
 import { Images } from "../../constants/images";
-import { RegistrationAnimatedViewModel } from "../_viewsModels/RegistrationAnimatedViewModel";
+import { RegistrationAnimatedViewModel } from "../_viewModels/RegistrationAnimatedViewModel";
 
 const RegistrationAnimatedView = React.memo(() => {
   const { carCentral, carCentralRotate } = RegistrationAnimatedViewModel();

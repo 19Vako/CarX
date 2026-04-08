@@ -3,7 +3,7 @@ import React from "react";
 import { Animated, Image, Text, View } from "react-native";
 import normalize from "react-native-normalize";
 import { Button, TextInput } from "react-native-paper";
-import { BottomLogInMenuViewModel } from "../_viewsModels/BottomLogInMenuViewModel";
+import { BottomLogInMenuViewModel } from "../_viewModels/BottomLogInMenuViewModel";
 import ConfirmNumberCode from "./ConfirmNumberCode";
 import CountryCodeSelect from "./CountryCodeSelect";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import CountryPicker, { CountryCode } from "react-native-country-picker-modal";
-import { CountryCodeSelectViewMode } from "../_viewsModels/CountryCodeSelectViewModel";
+import { CountryCodeSelectViewMode } from "../_viewModels/CountryCodeSelectViewModel";
 
 const CountryCodeSelect = ({
   countryTextCode,
@@ -14,9 +14,7 @@ const CountryCodeSelect = ({
   setCountryCode: (code: string) => void;
   countryCode: string;
 }) => {
-
-  const {isVisible, setIsVisible} = CountryCodeSelectViewMode()
-
+  const { isVisible, setIsVisible } = CountryCodeSelectViewMode();
 
   return (
     <TouchableOpacity
