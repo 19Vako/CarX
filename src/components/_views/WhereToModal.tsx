@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { WhereToModalViewModel } from "../_viewsModels/WhereToModalViewModel";
+import { WhereToModalViewModel } from "../_viewModels/WhereToModalViewModel";
 
 export default function WhereToModal({
   visible,

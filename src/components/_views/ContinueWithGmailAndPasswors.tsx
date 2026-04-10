@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Animated } from "react-native";
 import { Button, IconButton, TextInput } from "react-native-paper";
-import { ContinueWithGmailAndPassworsViewModel } from "../_viewsModels/ContinueWithGmailAndPassworsViewModel";
+import { ContinueWithGmailAndPassworsViewModel } from "../_viewModels/ContinueWithGmailAndPassworsViewModel";
 
 export default function ContinueWithGmailAndPasswors({
   handleView,

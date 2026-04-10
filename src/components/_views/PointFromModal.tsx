@@ -1,17 +1,17 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import {
-  KeyboardAvoidingView,
-  Modal,
-  Platform,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    KeyboardAvoidingView,
+    Modal,
+    Platform,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { PointFromModalViewModel } from "../_viewsModels/PointFromModalViewModel";
+import { PointFromModalViewModel } from "../_viewModels/PointFromModalViewModel";
 
 export default function PointFromModal({
   visible,

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
-export function SplashViewModel() {
+export function SplashScreenViewModel() {
   const carAnimation = useRef(new Animated.ValueXY({ x: -100, y: 0 })).current;
   const logoAnimation = useRef(new Animated.Value(1)).current;
   const pointPosition = useRef(

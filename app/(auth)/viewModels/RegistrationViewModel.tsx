@@ -2,7 +2,7 @@ import BottomLogInMenu from "@/src/components/_views/BottomLogInMenu";
 import ContinueWithGmailAndPasswors from "@/src/components/_views/ContinueWithGmailAndPasswors";
 import React, { useState } from "react";
 
-export function RegistrationModel() {
+export function RegistrationViewModel() {
   const [activeBottomView, setActiveBottomView] = useState<
     "Gmail_Password_View" | "Welcome_View"
   >("Welcome_View");

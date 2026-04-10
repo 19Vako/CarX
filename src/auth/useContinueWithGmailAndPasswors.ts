@@ -1,13 +1,10 @@
 import { auth } from "@/src/configs/firebaseConfig";
-import { useNavigation } from "@react-navigation/native";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
 export function useContinueWithGmailAndPasswors() {
-  const navigation = useNavigation();
-
   const signIn = async (email: string, password: string) => {
     try {
       const userCredential = await signInWithEmailAndPassword(
