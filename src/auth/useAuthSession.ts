@@ -1,5 +1,4 @@
 import { auth } from "@/src/configs/firebaseConfig";
-import { router } from "expo-router";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -22,7 +21,6 @@ export function useAuthSession() {
           }),
         );
         setIsAuthenticated(true);
-        router.push("/(app)");
       } else {
         dispatch(logOutUser());
         setIsAuthenticated(false);
