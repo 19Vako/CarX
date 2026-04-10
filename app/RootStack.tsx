@@ -12,11 +12,11 @@ function RootStack() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Protected guard={isAuthenticated}>
-        <Stack.Screen name="(app)/index" />
+        <Stack.Screen name="(app)" />
       </Stack.Protected>
 
       <Stack.Protected guard={!isAuthenticated}>
-        <Stack.Screen name="(auth)/index" />
+        <Stack.Screen name="(auth)" />
       </Stack.Protected>
     </Stack>
   );
