@@ -6,10 +6,10 @@ export default function AppLayout() {
     <Drawer
       drawerContent={() => <DrawerContent />}
       screenOptions={{
-        headerShown: false, // Отключаем стандартный хедер (сделаем кастомную кнопку бургера на главной)
+        headerShown: false,
         drawerStyle: {
-          backgroundColor: "#1C1C1E", // Цвет фона подтягиваем под дизайн
-          width: "85%", // Drawer занимает 85% экрана
+          backgroundColor: "#1C1C1E",
+          width: "85%",
         },
       }}
     >
@@ -23,6 +23,18 @@ export default function AppLayout() {
         name="Account"
         options={{
           drawerLabel: "Account",
+        }}
+      />
+      <Drawer.Screen
+        name="History"
+        options={{
+          drawerLabel: "History",
+        }}
+      />
+      <Drawer.Screen
+        name="Payment"
+        options={{
+          drawerLabel: "Payment",
         }}
       />
     </Drawer>
