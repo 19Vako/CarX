@@ -7,14 +7,14 @@ import { DrawerButtonViewModel } from "../_viewModels/DrawerContentViewModel";
 import DrawerMenuItem from "./DrawerMenuItem";
 
 export default function DrawerContent() {
-  const { userImage, userName, userEmail, userCity } = DrawerButtonViewModel();
+  const { userImage, userName, userEmail, userCity, rating } =
+    DrawerButtonViewModel();
 
   return (
     <DrawerContentScrollView
       style={styles.container}
       contentContainerStyle={{ paddingTop: 0 }}
     >
-      {/* Шапка профиля */}
       <TouchableOpacity
         style={styles.profileHeader}
         onPress={() => router.push("/(app)/Account")}
@@ -29,13 +29,12 @@ export default function DrawerContent() {
         <MaterialCommunityIcons name="chevron-right" size={24} color="#888" />
       </TouchableOpacity>
 
-      {/* Рейтинг и Город */}
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Ionicons name="star" size={24} color="#FFC107" />
           <View style={styles.statTextContainer}>
-            <Text style={styles.statLabel}>Рейтинг</Text>
-            <Text style={styles.statValue}>5</Text>
+            <Text style={styles.statLabel}>Rating</Text>
+            <Text style={styles.statValue}>{rating}</Text>
           </View>
         </View>
 
@@ -52,13 +51,16 @@ export default function DrawerContent() {
         </View>
       </View>
 
-      {/* Меню навигации */}
       <View style={styles.menuContainer}>
-        <DrawerMenuItem icon="history" label="History" onPress={() => {}} />
+        <DrawerMenuItem
+          icon="history"
+          label="History"
+          onPress={() => router.push("/(app)/History")}
+        />
         <DrawerMenuItem
           icon="credit-card-outline"
           label="Payments"
-          onPress={() => {}}
+          onPress={() => router.push("/(app)/Payment")}
         />
       </View>
 
