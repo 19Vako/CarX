@@ -18,7 +18,6 @@
       "barStyle": "dark-content",
       "backgroundColor": "#808080"
     },
-
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sergii.carX",
@@ -35,7 +34,6 @@
             ]
           }
         ],
-
         "ITSAppUsesNonExemptEncryption": false
       }
     },
@@ -92,6 +90,14 @@
           "locationAlwaysPermission": "CarX uses background location tracking to allow drivers to receive orders in the background",
           "locationWhenInUsePermission": "Allow access to geodata to display your location on the map.",
           "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.sergii.carx",
+          "enableGooglePay": true
         }
       ]
     ],
