@@ -1,13 +1,14 @@
 import { calculateRidePrice } from "@/src/utils/pricing";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import {
-    FlatList,
-    Modal,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  FlatList,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { RideTypeModalViewModel } from "../_viewModels/RideTypeModalViewModel";
 import RideItem from "./RideItem";
@@ -66,7 +67,11 @@ export default function RideTypeModal({
           showsVerticalScrollIndicator={false}
         />
 
-        <TouchableOpacity style={styles.chooseButton} activeOpacity={0.8}>
+        <TouchableOpacity
+          onPress={() => router.push("/(app)/PaymentsUICompleteScreen")}
+          style={styles.chooseButton}
+          activeOpacity={0.8}
+        >
           <Text style={styles.chooseButtonText}>
             Choose {RIDE_TYPES.find((r) => r.id === selectedRide)?.title}
           </Text>

@@ -47,9 +47,18 @@ export default function Map() {
           longitudeDelta: 0.005,
         }}
       >
+<<<<<<< HEAD
         {routeCoords.length > 0 && (
           <Polyline
             coordinates={routeCoords}
+=======
+        {pointToLocation && (
+          <MapViewDirections
+            origin={pickupLocation ? pickupLocation : location}
+            destination={pointToLocation}
+            apikey={process.env.EXPO_PUBLIC_GOOGLE_MAPS_APIKEY!}
+            strokeWidth={4}
+>>>>>>> 70986d6 (refactor(ui): update layout, map and ride modal; remove payment completion screen)
             strokeColor="#4A90E2"
             strokeWidth={4}
             lineJoin="round"

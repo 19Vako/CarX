@@ -39,7 +39,7 @@ export default Sentry.wrap(function App() {
 
   return (
     <StripeProvider
-      publishableKey={process.env.EXPO_PUBLI_STRIPE_HABLE_KEY!}
+      publishableKey={process.env.EXPO_PUBLIC_STRIPE_HABLE_KEY!}
       // merchantIdentifier="merchant.com.sergii.carx"
     >
       <Provider store={store}>
