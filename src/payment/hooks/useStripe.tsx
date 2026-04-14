@@ -8,9 +8,6 @@ import type {
   PresentPaymentSheetResult,
 } from "@/src/types/paymentTypes";
 
-/**
- * Очищенный useStripe hook для CarX
- */
 export function useStripe() {
   // Инициализация шторки (Технический минимум №2)
   const _initPaymentSheet = useCallback(
