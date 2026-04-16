@@ -3,3 +3,8 @@ export interface RouteInfo {
   duration: number; // в минутах
   coordinates: any[]; // точки для линии
 }
+
+export interface Coords {
+  latitude: number;
+  longitude: number;
+}

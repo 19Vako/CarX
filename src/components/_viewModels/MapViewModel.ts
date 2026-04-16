@@ -5,8 +5,9 @@ import {
   setRouteData,
 } from "@/src/store/Slices/map/mapSlice";
 import { RootState } from "@/src/store/store";
+import { Coords, RouteInfo } from "@/src/types/routeTypes";
 import * as Location from "expo-location";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import MapView from "react-native-maps";
 import { useDispatch, useSelector } from "react-redux";
 import * as MapService from "../_services/MapService";
@@ -14,25 +15,36 @@ import * as MapService from "../_services/MapService";
 export function MapViewModel() {
   const dispatch = useDispatch();
   const mapRef = useRef<MapView>(null);
-
-  const { userLocation, pickupLocation, pointToLocation } = useSelector(
-    (state: RootState) => state.location,
-  );
+  const [routeCoords, setRouteCoords] = useState<Coords[]>([]);
+  const { userLocation, pickupLocation, isManualSelection, pointToLocation } =
+    useSelector((state: RootState) => state.location);
 
   useEffect(() => {
     if (pickupLocation && pointToLocation) {
-      MapService.fitToCoords([pickupLocation, pointToLocation]);
+      MapService.fitToCoords([pickupLocation!, pointToLocation]);
     } else if (pickupLocation) {
       MapService.animateTo(pickupLocation);
     }
   }, [pickupLocation, pointToLocation]);
 
-  const handleMapLongPress = async (coords: {
-    latitude: number;
-    longitude: number;
-  }) => {
+  const handleRouteReady = (result: Omit<RouteInfo, "coordinates">) => {
+    const routeInfo = calculateRoute(result);
+    dispatch(
+      setRouteData({
+        distance: routeInfo.distance,
+        duration: routeInfo.duration,
+      }),
+    );
+  };
+
+  const handleMapLongPress = async (coords: Coords) => {
     dispatch(setPointToLocation(coords));
     try {
+      let startLocation = isManualSelection ? pickupLocation : userLocation;
+      const route = await MapService.fetchRoute(startLocation!, coords);
+      setRouteCoords(route!.coordinates);
+      handleRouteReady(route!);
+
       const reverse = await Location.reverseGeocodeAsync(coords);
       if (reverse[0]) {
         const address =
@@ -45,19 +57,6 @@ export function MapViewModel() {
     }
   };
 
-  const handleRouteReady = (result: any) => {
-    // 1. Прогоняем через твой новый сервис
-    const routeInfo = calculateRoute(result);
-
-    // 2. Сохраняем в Redux чистые данные
-    dispatch(
-      setRouteData({
-        distance: routeInfo.distance,
-        duration: routeInfo.duration,
-      }),
-    );
-  };
-
   return {
     mapRef,
     location: userLocation,
@@ -65,5 +64,6 @@ export function MapViewModel() {
     pointToLocation,
     handleMapLongPress,
     handleRouteReady,
+    routeCoords,
   };
 }
