@@ -22,8 +22,7 @@ export default function RideTypeModal({
   visible: boolean;
   onClose: () => void;
 }) {
-  const { RIDE_TYPES, selectedRide, setSelectedRide } =
-    RideTypeModalViewModel();
+  const { RIDE_TYPES, selectedRide, selectRideType } = RideTypeModalViewModel();
 
   return (
     <Modal
@@ -58,7 +57,7 @@ export default function RideTypeModal({
               <RideItem
                 item={item}
                 selectedRide={selectedRide}
-                setSelectedRide={setSelectedRide}
+                selectRideType={selectRideType}
                 price={currentPrice}
               />
             );

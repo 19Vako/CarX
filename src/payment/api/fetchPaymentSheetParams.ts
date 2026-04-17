@@ -1,10 +1,10 @@
 import { apiClient } from "./apiClient";
 
-export const fetchPaymentSheetParams = async () => {
+export const fetchPaymentSheetParams = async (amount: number) => {
   try {
     const { data } = await apiClient.post("/paymentSheet", {
       currency: "usd",
-      amount: 1500,
+      amount: amount,
     });
 
     return {
