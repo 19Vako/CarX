@@ -1,10 +1,18 @@
 import { apiClient } from "./apiClient";
 
-export const fetchPaymentSheetParams = async (amount: number) => {
+export const fetchPaymentSheetParams = async (
+  price: number,
+  uid: string,
+  name: string,
+  email: string,
+) => {
   try {
     const { data } = await apiClient.post("/paymentSheet", {
       currency: "usd",
-      amount: amount,
+      amount: price,
+      firebaseUID: uid,
+      email: email,
+      name: name,
     });
 
     return {

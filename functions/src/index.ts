@@ -18,26 +18,44 @@ export const paymentSheet = onRequest(
       }
 
       try {
-        const { amount, currency } = req.body;
+        const { amount, currency, firebaseUID, email, name } = req.body;
 
-        const customer = await stripe.customers.create();
+        let stripeCustomerId;
+
+        const existingCustomers = await stripe.customers.list({
+          email: email,
+          limit: 1,
+        });
+
+        if (existingCustomers.data.length > 0) {
+          stripeCustomerId = existingCustomers.data[0].id;
+        } else {
+          const newCustomer = await stripe.customers.create({
+            email: email,
+            name: name,
+            metadata: {
+              firebaseUID: firebaseUID,
+            },
+          });
+          stripeCustomerId = newCustomer.id;
+        }
 
         const ephemeralKey = await stripe.ephemeralKeys.create(
-          { customer: customer.id },
+          { customer: stripeCustomerId },
           { apiVersion: "2023-10-16" },
         );
 
         const paymentIntent = await stripe.paymentIntents.create({
           amount: amount,
           currency: currency,
-          customer: customer.id,
+          customer: stripeCustomerId,
           automatic_payment_methods: { enabled: true },
         });
 
         res.json({
           paymentIntent: paymentIntent.client_secret,
           ephemeralKey: ephemeralKey.secret,
-          customer: customer.id,
+          customer: stripeCustomerId,
         });
       } catch (error: any) {
         res.status(500).json({ error: error.message });
