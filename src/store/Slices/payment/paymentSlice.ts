@@ -5,11 +5,11 @@ const paymentSlice = createSlice({
   name: "paymentSlice",
   initialState,
   reducers: {
-    setPrice(state, action: PayloadAction<number>) {
-      state.price = action.payload;
+    setRideTypeModalVisible(state, action: PayloadAction<boolean>) {
+      state.rideTypeModalVisible = action.payload;
     },
   },
 });
 
-export const { setPrice } = paymentSlice.actions;
+export const { setRideTypeModalVisible } = paymentSlice.actions;
 export default paymentSlice.reducer;

@@ -1,7 +1,7 @@
 export interface PaymentState {
-  price: number;
+  rideTypeModalVisible: boolean;
 }
 
 export const initialState: PaymentState = {
-  price: 0,
+  rideTypeModalVisible: false,
 };

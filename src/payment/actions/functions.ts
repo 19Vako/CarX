@@ -1,13 +1,12 @@
 import type {
   InitPaymentSheetResult,
   PaymentSheet,
-  PresentPaymentSheetResult
+  PresentPaymentSheetResult,
 } from "@/src/types/paymentTypes";
 import { NativeModules } from "react-native";
 
 const { StripeSdk } = NativeModules;
 
-// Проверка на наличие модуля (полезно при дебаге натива)
 if (!StripeSdk) {
   console.error(
     "Stripe SDK native module is not installed. Make sure you've rebuilt your native app.",

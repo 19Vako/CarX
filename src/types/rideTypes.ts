@@ -1,7 +1,9 @@
 export interface RideType {
-  id: string | number;
+  priceInCents: number;
+  displayPrice: string;
+  id: string;
   title: string;
   image: any;
   multiplier: number;
-  time: number | string;
+  time: string;
 }
