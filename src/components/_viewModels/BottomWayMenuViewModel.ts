@@ -1,18 +1,19 @@
+import { setRideTypeModalVisible } from "@/src/store/Slices/payment/paymentSlice";
 import { RootState } from "@/src/store/store";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export function BottomWayMenuViewModel() {
-  const { pointFrom, pointTo, routeData } = useSelector(
+  const dispatch = useDispatch();
+  const { pointFrom, pointTo } = useSelector(
     (state: RootState) => state.location,
   );
   const [modalVisible, setModalVisible] = useState(false);
   const [fromModalVisible, setFromModalVisible] = useState(false);
-  const [rideTypeModalVisible, setRideTypeModalVisible] = useState(false);
 
   useEffect(() => {
     if (pointTo) {
-      setRideTypeModalVisible(true);
+      dispatch(setRideTypeModalVisible(true));
     }
   }, [pointTo]);
 
@@ -21,10 +22,7 @@ export function BottomWayMenuViewModel() {
     setModalVisible,
     pointTo,
     pointFrom,
-    distance: routeData?.distance,
     fromModalVisible,
     setFromModalVisible,
-    rideTypeModalVisible,
-    setRideTypeModalVisible,
   };
 }

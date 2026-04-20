@@ -1,25 +1,19 @@
-import { RideType } from "@/src/types/rideTypes";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { RiderItemModel } from "../_models/RiderItemModel";
 
 export default function RideItem({
   item,
-  selectedRide,
-  selectRideType,
-  price,
+  isSelected,
+  onSelect,
 }: {
-  item: RiderItemModel;
-  selectedRide: string;
-  selectRideType: (item: RideType, price: number) => void;
-  price: number;
+  item: any;
+  isSelected: boolean;
+  onSelect: () => void;
 }) {
-  const isSelected = selectedRide === item.id;
-
   return (
     <TouchableOpacity
       style={[styles.rideItem, isSelected && styles.rideItemActive]}
-      onPress={() => selectRideType(item, price)}
+      onPress={onSelect}
       activeOpacity={0.7}
     >
       <Image source={item.image} style={styles.carImage} resizeMode="contain" />
@@ -29,7 +23,7 @@ export default function RideItem({
         <Text style={styles.rideTime}>{item.time}</Text>
       </View>
 
-      <Text style={styles.price}>${price}</Text>
+      <Text style={styles.price}>${item.displayPrice}</Text>
     </TouchableOpacity>
   );
 }

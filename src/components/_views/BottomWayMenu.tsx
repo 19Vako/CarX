@@ -14,10 +14,7 @@ export default function BottomWayMenu() {
     pointTo,
     pointFrom,
     fromModalVisible,
-    distance,
     setFromModalVisible,
-    rideTypeModalVisible,
-    setRideTypeModalVisible,
   } = BottomWayMenuViewModel();
 
   return (
@@ -79,11 +76,7 @@ export default function BottomWayMenu() {
         visible={fromModalVisible}
         onClose={() => setFromModalVisible(false)}
       />
-      <RideTypeModal
-        distance={distance || 0}
-        visible={rideTypeModalVisible}
-        onClose={() => setRideTypeModalVisible(false)}
-      />
+      <RideTypeModal />
     </>
   );
 }
