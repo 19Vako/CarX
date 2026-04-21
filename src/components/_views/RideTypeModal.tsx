@@ -1,28 +1,30 @@
-import { calculateRidePrice } from "@/src/utils/pricing";
 import { Ionicons } from "@expo/vector-icons";
+
 import React from "react";
 import {
-    FlatList,
-    Modal,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  ActivityIndicator,
+  FlatList,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { RideTypeModalViewModel } from "../_viewModels/RideTypeModalViewModel";
 import RideItem from "./RideItem";
 
-export default function RideTypeModal({
-  distance,
-  visible,
-  onClose,
-}: {
-  distance: number;
-  visible: boolean;
-  onClose: () => void;
-}) {
-  const { RIDE_TYPES, selectedRide, setSelectedRide } =
-    RideTypeModalViewModel();
+export default function RideTypeModal() {
+  const {
+    distance,
+    rideOptions,
+    selectedRideId,
+    visible,
+    selectedOption,
+    loading,
+    onClose,
+    selectRideType,
+    handlePayment,
+  } = RideTypeModalViewModel();
 
   return (
     <Modal
@@ -45,31 +47,32 @@ export default function RideTypeModal({
         </View>
 
         <FlatList
-          data={RIDE_TYPES}
+          data={rideOptions}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => {
-            const currentPrice = calculateRidePrice(
-              distance == 0 ? 5 : distance,
-              item.multiplier,
-            );
-
-            return (
-              <RideItem
-                item={item}
-                selectedRide={selectedRide}
-                setSelectedRide={setSelectedRide}
-                price={currentPrice}
-              />
-            );
-          }}
+          renderItem={({ item }) => (
+            <RideItem
+              item={item}
+              isSelected={selectedRideId === item.id}
+              onSelect={() => selectRideType(item.id)}
+            />
+          )}
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
         />
 
-        <TouchableOpacity style={styles.chooseButton} activeOpacity={0.8}>
-          <Text style={styles.chooseButtonText}>
-            Choose {RIDE_TYPES.find((r) => r.id === selectedRide)?.title}
-          </Text>
+        <TouchableOpacity
+          onPress={handlePayment}
+          style={[styles.chooseButton, loading && { opacity: 0.7 }]}
+          activeOpacity={0.8}
+          disabled={loading}
+        >
+          {loading ? (
+            <ActivityIndicator color="#15151A" />
+          ) : (
+            <Text style={styles.chooseButtonText}>
+              {`Pay $${selectedOption.displayPrice}`}
+            </Text>
+          )}
         </TouchableOpacity>
       </View>
     </Modal>
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   chooseButton: {
-    backgroundColor: "#FDE047", // Твой желтый
+    backgroundColor: "#FDE047",
     borderRadius: 16,
     paddingVertical: 18,
     alignItems: "center",

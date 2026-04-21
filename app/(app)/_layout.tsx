@@ -31,12 +31,6 @@ export default function AppLayout() {
           drawerLabel: "History",
         }}
       />
-      <Drawer.Screen
-        name="Payment"
-        options={{
-          drawerLabel: "Payment",
-        }}
-      />
     </Drawer>
   );
 }

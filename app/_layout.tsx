@@ -1,6 +1,7 @@
 import { initGlobalLocationTracking } from "@/src/location/positionService";
 import store from "@/src/store/store";
 import * as Sentry from "@sentry/react-native";
+import { StripeProvider } from "@stripe/stripe-react-native";
 import * as Font from "expo-font";
 import { useEffect } from "react";
 import { Text } from "react-native";
@@ -37,10 +38,15 @@ export default Sentry.wrap(function App() {
   }
 
   return (
-    <Provider store={store}>
-      <Sentry.ErrorBoundary fallback={<Text>Something went wrong</Text>}>
-        <RootStack />
-      </Sentry.ErrorBoundary>
-    </Provider>
+    <StripeProvider
+      publishableKey={process.env.EXPO_PUBLIC_STRIPE_HABLE_KEY!}
+      merchantIdentifier={process.env.EXPO_PUBLIC_MERCHANT_IDENTIFIER!}
+    >
+      <Provider store={store}>
+        <Sentry.ErrorBoundary fallback={<Text>Something went wrong</Text>}>
+          <RootStack />
+        </Sentry.ErrorBoundary>
+      </Provider>
+    </StripeProvider>
   );
 });
