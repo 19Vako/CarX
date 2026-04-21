@@ -4,7 +4,7 @@
     "slug": "carX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "carX",
+    "scheme": "com.sergii.carX",
     "platforms": ["ios", "android", "web"],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
@@ -22,13 +22,11 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.sergii.carX",
       "googleServicesFile": "./GoogleService-Info.plist",
-      "scheme": "com.sergii.carX",
       "icon": "./assets/images/favicon.png",
       "infoPlist": {
         "CFBundleURLTypes": [
           {
             "CFBundleURLSchemes": [
-              "carX",
               "com.sergii.carX",
               "com.googleusercontent.apps.745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1"
             ]
