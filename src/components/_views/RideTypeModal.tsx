@@ -70,7 +70,7 @@ export default function RideTypeModal() {
             <ActivityIndicator color="#15151A" />
           ) : (
             <Text style={styles.chooseButtonText}>
-              {`Pay ${selectedOption.displayPrice}`}
+              {`Pay $${selectedOption.displayPrice}`}
             </Text>
           )}
         </TouchableOpacity>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   chooseButton: {
-    backgroundColor: "#FDE047", // Твой желтый
+    backgroundColor: "#FDE047",
     borderRadius: 16,
     paddingVertical: 18,
     alignItems: "center",

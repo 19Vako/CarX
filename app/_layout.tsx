@@ -40,7 +40,7 @@ export default Sentry.wrap(function App() {
   return (
     <StripeProvider
       publishableKey={process.env.EXPO_PUBLIC_STRIPE_HABLE_KEY!}
-      // merchantIdentifier="merchant.com.sergii.carx"
+      merchantIdentifier={process.env.EXPO_PUBLIC_MERCHANT_IDENTIFIER!}
     >
       <Provider store={store}>
         <Sentry.ErrorBoundary fallback={<Text>Something went wrong</Text>}>

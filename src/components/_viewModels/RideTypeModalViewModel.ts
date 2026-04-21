@@ -4,9 +4,11 @@ import { setRideTypeModalVisible } from "@/src/store/Slices/payment/paymentSlice
 import { RootState } from "@/src/store/store";
 import { calculateStripePrice, formatDisplayPrice } from "@/src/utils/pricing";
 import { PaymentSheetError, useStripe } from "@stripe/stripe-react-native";
+import * as Linking from "expo-linking";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Alert } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { STRIPE_CONFIG } from "../../configs/payment/stripeConfig";
 
 const BASE_RIDE_TYPES = [
   {
@@ -81,11 +83,23 @@ export function RideTypeModalViewModel() {
         );
 
       const { error } = await initPaymentSheet({
-        merchantDisplayName: "CarX Taxi",
+        merchantDisplayName: STRIPE_CONFIG.merchantDisplayName,
         customerId: customer,
         customerEphemeralKeySecret: ephemeralKey,
         paymentIntentClientSecret: paymentIntent,
         allowsDelayedPaymentMethods: true,
+        returnURL: Linking.createURL("stripe-redirect"),
+
+        applePay: {
+          merchantCountryCode: STRIPE_CONFIG.countryCode,
+        },
+
+        googlePay: {
+          merchantCountryCode: STRIPE_CONFIG.countryCode,
+          testEnv: STRIPE_CONFIG.testEnv,
+          currencyCode: STRIPE_CONFIG.currencyCode,
+        },
+
         defaultBillingDetails: {
           name: name!,
           email: email!,
@@ -114,8 +128,8 @@ export function RideTypeModalViewModel() {
         Alert.alert(`Ошибка: ${error.code}`, error.message);
       }
     } else {
-      Alert.alert("Успех", "Оплата прошла успешно!");
       setPaymentSheetEnabled(false);
+      dispatch(setRideTypeModalVisible(false));
     }
   };
 
