@@ -57,11 +57,6 @@ export default function DrawerContent() {
           label="History"
           onPress={() => router.push("/(app)/History")}
         />
-        <DrawerMenuItem
-          icon="credit-card-outline"
-          label="Payments"
-          onPress={() => router.push("/(app)/Payment")}
-        />
       </View>
 
       <View style={styles.footerMenu}>
