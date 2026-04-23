@@ -1,6 +1,6 @@
-import BottomWayMenu from "@/src/components/_views/BottomWayMenu";
-import DrawerButton from "@/src/components/_views/DrawerButton";
-import Map from "@/src/components/_views/Map";
+import DrawerButton from "@/src/components/navigation/views/DrawerButton";
+import BottomWayMenu from "@/src/components/orders/views/BottomWayMenu";
+import Map from "@/src/components/orders/views/Map";
 
 import React from "react";
 import { View } from "react-native";

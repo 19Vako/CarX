@@ -1,4 +1,4 @@
-import RegistrationAnimatedView from "@/src/components/_views/RegistrationAnimatedView";
+import RegistrationAnimatedView from "@/src/components/auth/views/RegistrationAnimatedView";
 
 import React from "react";
 import { View } from "react-native";
