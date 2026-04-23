@@ -1,4 +1,4 @@
-import { auth } from "@/src/configs/firebaseConfig";
+import { auth } from "@/src/configs/firebase/firebaseConfig";
 import { LogService } from "@/src/utils/LogService";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";

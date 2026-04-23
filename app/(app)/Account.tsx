@@ -1,8 +1,8 @@
-import AccountMenuList from "@/src/components/_views/AccountMenuList";
-import ProfileHeader from "@/src/components/_views/ProfileHeader";
-import ProfileLogOutButton from "@/src/components/_views/ProfileLogOutButton";
-import ProfileRating from "@/src/components/_views/ProfileRating";
-import ProfileSection from "@/src/components/_views/ProfileSection";
+import AccountMenuList from "@/src/components/account/views/AccountMenuList";
+import ProfileHeader from "@/src/components/account/views/ProfileHeader";
+import ProfileLogOutButton from "@/src/components/account/views/ProfileLogOutButton";
+import ProfileRating from "@/src/components/account/views/ProfileRating";
+import ProfileSection from "@/src/components/account/views/ProfileSection";
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";

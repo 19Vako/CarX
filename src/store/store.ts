@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reactotron from "../configs/ReactotronConfig";
+import reactotron from "../configs/reactotron/ReactotronConfig";
 import location from "./Slices/map/mapSlice";
 import payment from "./Slices/payment/paymentSlice";
 import userReducer from "./Slices/user/userSlice";

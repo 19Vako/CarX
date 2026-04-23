@@ -1,4 +1,4 @@
-import DrawerContent from "@/src/components/_views/DrawerContent";
+import DrawerContent from "@/src/components/navigation/views/DrawerContent";
 import { Drawer } from "expo-router/drawer";
 
 export default function AppLayout() {

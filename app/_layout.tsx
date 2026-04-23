@@ -22,7 +22,7 @@ Sentry.init({
 });
 
 if (__DEV__) {
-  import("@/src/configs/ReactotronConfig");
+  import("@/src/configs/reactotron/ReactotronConfig");
 }
 
 export default Sentry.wrap(function App() {
