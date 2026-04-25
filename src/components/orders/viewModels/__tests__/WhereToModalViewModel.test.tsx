@@ -4,25 +4,22 @@ import React from "react";
 import { Provider } from "react-redux";
 
 import mapReducer, {
-    setPointTo,
-    setPointToLocation,
+  setPointTo,
+  setPointToLocation,
 } from "@/src/store/Slices/map/mapSlice";
 import { WhereToModalViewModel } from "../WhereToModalViewModel";
 
-// 1. Подменяем функцию получения координат
 import { getCoordsFromAddress } from "@/src/location/geocodingService";
 jest.mock("@/src/location/geocodingService", () => ({
   getCoordsFromAddress: jest.fn(),
 }));
 
-// 2. Подменяем safe-area-context
 jest.mock("react-native-safe-area-context", () => ({
   useSafeAreaInsets: jest
     .fn()
     .mockReturnValue({ top: 40, bottom: 20, left: 0, right: 0 }),
 }));
 
-// Вспомогательная функция для стора
 const createTestStore = (preloadedState = {}) => {
   return configureStore({
     reducer: {
