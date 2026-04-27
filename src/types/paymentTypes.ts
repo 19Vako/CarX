@@ -69,14 +69,6 @@ export namespace PaymentMethod {
   export type ConfirmOptions = CreateOptions;
 }
 
-// Если BillingDetails еще не определен в твоем файле:
-export interface BillingDetails {
-  email?: string;
-  phone?: string;
-  name?: string;
-  address?: Address;
-}
-
 export interface BillingDetails {
   email?: string;
   phone?: string;

@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "com.sergii.carX",
-    "platforms": ["ios", "android", "web"],
+    "platforms": ["ios", "android"],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
     "androidStatusBar": {

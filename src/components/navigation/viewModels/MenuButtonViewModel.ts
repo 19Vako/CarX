@@ -1,4 +1,4 @@
-import { DrawerParamList } from "@/src/types/DrawerParamTypes";
+import { DrawerParamList } from "@/src/types/drawerParamTypes";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
 import { GestureResponderEvent } from "react-native";

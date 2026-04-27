@@ -10,11 +10,14 @@ jest.mock("../../services/MapService", () => ({
 }));
 
 jest.mock("react-native-maps", () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const React = require("react");
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { View } = require("react-native");
 
   class MockMapView extends React.Component {
     render() {
+      // @ts-ignore
       return <View testID="map-view">{this.props.children}</View>;
     }
   }
