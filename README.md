@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# CarX
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+CarX is a high-performance on-demand taxi booking application built with React Native and Expo. It provides a seamless experience for users to request rides, track drivers in real-time, and handle secure payments.
+The project focuses on Offline-First architecture and a smooth, native-like UX, mimicking industry leaders like Uber or Lyft.
 
-## Get started
+## Demo
 
-1. Install dependencies
+<video src="assets/demo/Demo.mov" width="400px" controls autoplay loop muted></video>
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- Real-time Geolocation: Interactive map integration with live route calculation and distance tracking.
+- Ride Management: Complete flow from destination search to ride confirmation.
+- Secure Payments: Full integration with Stripe API, including Apple Pay and saved card management.
+- Smart Animations: Custom splash screens and smooth transitions powered by expo-image and react-native-reanimated.
+- Backend Excellence: Powered by Firebase for real-time data syncing, authentication, and cloud storage.
 
-   ```bash
-   npx expo start
-   ```
+## Run Locally
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Clone the project
 
 ```bash
-npm run reset-project
+git clone https://github.com/19Vako/CarX.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Go to the project directory
 
-## Learn more
+```bash
+cd CarX
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Install dependencies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+Install Firebase functions dependencies
 
-Join our community of developers creating universal apps.
+```bash
+cd functions
+npm install
+cd ..
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Start the app
+
+```bash
+npx expo start
+```
+
+## Architecture
+
+This project is designed with a production-oriented architecture inspired by real-world ride-hailing systems.
+
+- 📦 State Management Layer
+  Redux Toolkit used for predictable state handling
+  RTK Query manages server-state, caching, and API synchronization
+  Separation between UI state and server state
+- 🌐 Offline-First Approach
+  Application is designed to remain functional under poor network conditions
+  Local state caching for ride flow continuity
+  Graceful recovery after reconnection
+- 💳 Payments System (Stripe)
+  Secure payment flow using Stripe SDK
+  Supports Apple Pay and saved cards
+  Payment state is decoupled from UI state to prevent inconsistencies
+- 📍 Real-time Maps & Geolocation
+  Google Maps integration via React Native Maps
+  Live route calculation and polyline rendering
+  Continuous location tracking for ride updates
+- 🔥 Backend Architecture (Firebase)
+  Firebase Auth for authentication flow
+  Firestore for real-time ride and user data syncing
+  Cloud Functions for server-side logic
+
+## Testing
+
+The project includes a structured testing setup focused on core business logic and state management.
+
+### Unit Testing
+
+- Redux slices (ride flow, UI state, modals)
+- RTK Query logic and API layer behavior
+- Utility functions for validation and formatting
+
+### Mocking Strategy
+
+- Mocked Redux store for isolated slice testing
+- Mocked API responses for deterministic tests
+- External UI libraries excluded from logic tests (focus on business logic)
+
+### Integration Testing
+
+- Ride creation flow (destination → route → confirmation)
+- Payment initialization flow via Stripe
+- Authentication state handling with Firebase
+
+## Screenshots
+
+<img src="assets/screenshots/MenuScreenshot.png" alt="Order History" width="240px"/>
+<img src="assets/screenshots/ProfileScreenshot.png" alt="Order History" width="240px"/>
+<img src="assets/screenshots/MainScreenshot.png" alt="Order History" width="240px"/>
+<img src="assets/screenshots/OrderScreenshot.png" alt="Order History" width="240px"/>
