@@ -3,7 +3,9 @@ import { fetchPaymentSheetParams } from "@/src/payment/api/fetchPaymentSheetPara
 import { setRideTypeModalVisible } from "@/src/store/Slices/payment/paymentSlice";
 import { RootState } from "@/src/store/store";
 import { calculateStripePrice, formatDisplayPrice } from "@/src/utils/pricing";
+
 import { PaymentSheetError, useStripe } from "@stripe/stripe-react-native";
+
 import * as Linking from "expo-linking";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Alert } from "react-native";
