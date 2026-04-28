@@ -1,9 +1,10 @@
 import { Icons } from "@/src/constants/images";
 import { Animated, View } from "react-native";
-import { SplashViewModel } from "../(app)/models/SplashScreenModel";
+import { SplashScreenViewModel } from "./viewModels/SplashScreenViewModel";
 
 const SplashScreen = () => {
-  const { carAnimation, logoAnimation, pointPosition } = SplashViewModel();
+  const { carAnimation, logoAnimation, pointPosition } =
+    SplashScreenViewModel();
 
   return (
     <View

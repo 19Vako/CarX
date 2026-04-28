@@ -1,11 +1,11 @@
-import RegistrationAnimatedView from "@/src/components/_views/RegistrationAnimatedView";
+import RegistrationAnimatedView from "@/src/components/auth/views/RegistrationAnimatedView";
 
 import React from "react";
 import { View } from "react-native";
-import { RegistrationModel } from "../(app)/models/RegistrationModel";
+import { RegistrationViewModel } from "./viewModels/RegistrationViewModel";
 
 export default function Registration() {
-  const { ActiveView } = RegistrationModel();
+  const { ActiveView } = RegistrationViewModel();
   return (
     <View style={{ flex: 1, backgroundColor: "#1E252F" }}>
       <RegistrationAnimatedView />

@@ -4,8 +4,8 @@
     "slug": "carX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "carX",
-    "platforms": ["ios", "android", "web"],
+    "scheme": "com.sergii.carX",
+    "platforms": ["ios", "android"],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
     "androidStatusBar": {
@@ -18,24 +18,20 @@
       "barStyle": "dark-content",
       "backgroundColor": "#808080"
     },
-
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sergii.carX",
       "googleServicesFile": "./GoogleService-Info.plist",
-      "scheme": "com.sergii.carX",
       "icon": "./assets/images/favicon.png",
       "infoPlist": {
         "CFBundleURLTypes": [
           {
             "CFBundleURLSchemes": [
-              "carX",
               "com.sergii.carX",
               "com.googleusercontent.apps.745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1"
             ]
           }
         ],
-
         "ITSAppUsesNonExemptEncryption": false
       }
     },
@@ -92,6 +88,14 @@
           "locationAlwaysPermission": "CarX uses background location tracking to allow drivers to receive orders in the background",
           "locationWhenInUsePermission": "Allow access to geodata to display your location on the map.",
           "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.sergii.carx",
+          "enableGooglePay": true
         }
       ]
     ],
