@@ -5,7 +5,7 @@ The project focuses on Offline-First architecture and a smooth, native-like UX, 
 
 ## Demo
 
-<video src="assets/demo/Demo.mp4" width="400" autoplay loop muted playsinline></video>
+<img src="assets/demo/Demo.gif" width="300"/>
 
 ## Features
 
@@ -98,4 +98,4 @@ The project includes a structured testing setup focused on core business logic a
 
 ## Screenshots
 
-<img src="assets/screenshots/MenuScreenshot.png" alt="MenuScreenshot" width="240px"/> <img src="assets/screenshots/ProfileScreenshot.png" alt="ProfileScreenshot" width="240px"/><img src="assets/screenshots/MainScreenshot.png" alt="MainScreenshot" width="240px"/><img src="assets/screenshots/OrderScreenshot.png" alt="OrderScreenshot" width="240px"/>
+<img src="assets/screenshots/MenuScreenshot.png" alt="MenuScreenshot" width="230px"/> <img src="assets/screenshots/ProfileScreenshot.png" alt="ProfileScreenshot" width="230px"/><img src="assets/screenshots/MainScreenshot.png" alt="MainScreenshot" width="230px"/><img src="assets/screenshots/OrderScreenshot.png" alt="OrderScreenshot" width="230px"/>
