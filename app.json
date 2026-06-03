@@ -4,7 +4,7 @@
     "slug": "carX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "com.sergii.carX",
+    "scheme": "com.sergii.carx",
     "platforms": ["ios", "android"],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
@@ -20,7 +20,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sergii.carX",
+      "bundleIdentifier": "com.sergii.carx",
       "icon": "./assets/images/favicon.png",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -37,7 +37,7 @@
         "android.permission.FOREGROUND_SERVICE",
         "android.permission.FOREGROUND_SERVICE_LOCATION"
       ],
-      "package": "com.sergii.carX",
+      "package": "com.sergii.carx",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/favicon.png",
         "backgroundColor": "#808080"
@@ -64,7 +64,7 @@
       [
         "@react-native-google-signin/google-signin",
         {
-          "iosUrlScheme": "com.googleusercontent.apps.745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1"
+          "iosUrlScheme": "com.googleusercontent.apps.745026637842-4dg63coer9d5gq78vr9frheeo08i6vp7"
         }
       ],
       "expo-secure-store",
@@ -97,7 +97,7 @@
       [
         "react-native-app-auth",
         {
-          "redirectUrls": ["com.sergii.carX"]
+          "redirectUrls": ["com.sergii.carx"]
         }
       ]
     ],
@@ -106,7 +106,7 @@
     },
     "extra": {
       "router": {},
-      "appAuthRedirectScheme": "carX",
+      "appAuthRedirectScheme": "carx",
       "eas": {
         "projectId": "a5529b53-c9b2-4288-82da-0b7b0460e30f"
       }
