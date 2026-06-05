@@ -1,4 +1,5 @@
 import { initGlobalLocationTracking } from "@/src/location/positionService";
+import { useNotificationListener } from "@/src/notifications/local";
 import store from "@/src/store/store";
 import * as Sentry from "@sentry/react-native";
 import { StripeProvider } from "@stripe/stripe-react-native";
@@ -26,13 +27,17 @@ if (__DEV__) {
 }
 
 export default Sentry.wrap(function App() {
+  useNotificationListener();
+
   useEffect(() => {
     initGlobalLocationTracking();
   }, []);
+
   const [fontsLoaded] = Font.useFonts({
     "SpaceMono-Regular": require("@/assets/fonts/SpaceMono-Regular.ttf"),
     "Roboto-Medium": require("@/assets/fonts/Roboto-Medium.ttf"),
   });
+
   if (!fontsLoaded) {
     return null;
   }
