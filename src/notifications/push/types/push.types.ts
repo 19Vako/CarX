@@ -1,0 +1,20 @@
+export interface PushRegistrationResult {
+  isGranted: boolean;
+  token: string | null;
+}
+
+export interface PushNotificationMessage {
+  title: string;
+  body: string;
+  sound?: string;
+  data: {
+    orderId: string;
+    screen: string;
+  };
+}
+
+export interface PushNotificationState {
+  isGranted: boolean;
+  isLoading: boolean;
+  error: string | null;
+}
