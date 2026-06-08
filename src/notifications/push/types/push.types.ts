@@ -18,3 +18,8 @@ export interface PushNotificationState {
   isLoading: boolean;
   error: string | null;
 }
+
+export interface SaveExpoPushTokenError {
+  message: string;
+  type: string;
+}

@@ -12,19 +12,25 @@ if (!admin.apps.length) {
 export const savePushToken = onRequest((req, res) => {
   corsHandler(req, res, async () => {
     if (req.method !== "POST") {
-      res.status(405).send("Method Not Allowed");
+      res
+        .status(405)
+        .json({ error: "Method Not Allowed", type: "Wrong method" });
       return;
     }
 
     try {
       const { userId, token } = req.body;
       if (!userId || !token) {
-        res.status(400).json({ error: "Missing userId or token" });
+        res
+          .status(400)
+          .json({ error: "Missing userId or token", type: "Firestore" });
         return;
       }
 
       if (!Expo.isExpoPushToken(token)) {
-        res.status(400).json({ error: "Invalid Expo push token" });
+        res
+          .status(400)
+          .json({ error: "Invalid Expo push token", type: "Expo services" });
         return;
       }
 
@@ -39,7 +45,7 @@ export const savePushToken = onRequest((req, res) => {
         .json({ success: true, message: "Push token saved successfully" });
     } catch (error: any) {
       console.error("Error saving push token:", error);
-      res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message, type: error.type });
     }
   });
 });
