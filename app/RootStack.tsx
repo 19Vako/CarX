@@ -1,9 +1,11 @@
+import { usePushNotifications } from "@/src/notifications/push";
 import { Stack } from "expo-router";
 import { useAuthSession } from "../src/auth/useAuthSession";
 import SplashScreen from "./(app)/SplashScreen";
 
 function RootStack() {
   const { isLoading, isAuthenticated } = useAuthSession();
+  usePushNotifications(true);
 
   if (isLoading) {
     return <SplashScreen />;

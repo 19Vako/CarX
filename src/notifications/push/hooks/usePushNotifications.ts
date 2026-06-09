@@ -11,7 +11,9 @@ export const usePushNotifications = (autoRegister = false) => {
     if (autoRegister) {
       register();
     }
+  }, [register, autoRegister]);
 
+  useEffect(() => {
     const receivedListener = Notifications.addNotificationReceivedListener(
       (response) => {},
     );

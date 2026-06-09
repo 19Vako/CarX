@@ -1,5 +1,4 @@
 import { initGlobalLocationTracking } from "@/src/location/positionService";
-import { usePushNotifications } from "@/src/notifications/push";
 import store from "@/src/store/store";
 import * as Sentry from "@sentry/react-native";
 import { StripeProvider } from "@stripe/stripe-react-native";
@@ -30,8 +29,6 @@ export default Sentry.wrap(function App() {
   useEffect(() => {
     initGlobalLocationTracking();
   }, []);
-
-  usePushNotifications(true);
 
   const [fontsLoaded] = Font.useFonts({
     "SpaceMono-Regular": require("@/assets/fonts/SpaceMono-Regular.ttf"),
