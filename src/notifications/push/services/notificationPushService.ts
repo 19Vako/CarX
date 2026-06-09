@@ -1,10 +1,10 @@
 import Constants from "expo-constants";
 import * as Notification from "expo-notifications";
 import { Platform } from "react-native";
-import { saveExpoPushToken } from "../api/saveExpoPushToken";
 
-export class NotificationPushService {
-  static async register() {
+
+export function NotificationPushService() {
+  async function getPermissions() {
     if (Platform.OS === "android") {
       await Notification.setNotificationChannelAsync("default", {
         name: "default",
@@ -30,10 +30,10 @@ export class NotificationPushService {
       projectId: Constants.expoConfig?.extra?.eas.projectId,
     });
 
-    let mockId = "qv7RjX2AOPNdZsljDaBz";
-
-    await saveExpoPushToken.post("/savePushToken", { mockId, token });
-
-    return { isGranted: currentStatus === "granted" };
+    return { token: token, isGranted: currentStatus === "granted" };
   }
+
+  return {
+    getPermissions,
+  };
 }

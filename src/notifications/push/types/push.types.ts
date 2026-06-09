@@ -8,8 +8,9 @@ export interface PushNotificationMessage {
   body: string;
   sound?: string;
   data: {
-    orderId: string;
-    screen: string;
+    type?: string;
+    screen?: string;
+    entityId?: string;
   };
 }
 
