@@ -5,7 +5,7 @@ import SplashScreen from "./(app)/SplashScreen";
 
 function RootStack() {
   const { isLoading, isAuthenticated } = useAuthSession();
-  usePushNotifications(true);
+  usePushNotifications({ isAuthenticated, isLoading });
 
   if (isLoading) {
     return <SplashScreen />;
