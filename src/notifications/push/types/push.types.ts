@@ -4,6 +4,7 @@ export interface PushRegistrationResult {
 }
 
 export interface PushNotificationMessage {
+  id: string;
   title: string;
   body: string;
   sound?: string;
