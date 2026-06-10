@@ -1,39 +1,56 @@
 import * as Notifications from "expo-notifications";
-import { Href, useRouter } from "expo-router";
 import { useEffect } from "react";
+import { setupNotifications } from "../config/setupNotifications";
+import { NotificationNavigationService } from "../services/NotificationNavigationService";
 import { PushNotificationViewModel } from "../viewModels/PushNotificationViewModel";
 
-export const usePushNotifications = (autoRegister = false) => {
-  const { register, error, isGranted, isLoading } = PushNotificationViewModel();
-  const route = useRouter();
+export const usePushNotifications = ({
+  isAuthenticated,
+  isLoading,
+}: {
+  isAuthenticated: boolean;
+  isLoading: boolean;
+}) => {
+  const { register, error, isGranted } = PushNotificationViewModel();
 
   useEffect(() => {
-    if (autoRegister) {
+    setupNotifications();
+  }, []);
+
+  useEffect(() => {
+    if (isAuthenticated) {
       register();
     }
-  }, [register, autoRegister]);
+  }, [register, isAuthenticated]);
 
   useEffect(() => {
+    if (!isAuthenticated || isLoading) return;
+
+    const response = Notifications.getLastNotificationResponse();
+    if (!response) return;
+
+    NotificationNavigationService(response.notification.request.content.data);
+  }, [isAuthenticated, isLoading]);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
     const receivedListener = Notifications.addNotificationReceivedListener(
-      (response) => {},
+      () => {},
     );
 
     const responseListener =
       Notifications.addNotificationResponseReceivedListener((response) => {
-        const data = response.notification.request.content.data;
-
-        if (data && data.screen) {
-          setTimeout(() => {
-            route.push(data.screen as Href);
-          }, 100);
-        }
+        NotificationNavigationService(
+          response.notification.request.content.data,
+        );
       });
 
     return () => {
       receivedListener.remove();
       responseListener.remove();
     };
-  }, []);
+  }, [isAuthenticated]);
 
-  return { error, isGranted, isLoading };
+  return { error, isGranted };
 };
