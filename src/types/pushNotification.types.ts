@@ -4,11 +4,11 @@ export interface PushRegistrationResult {
 }
 
 export interface PushNotificationMessage {
-  id: string;
   title: string;
   body: string;
   sound?: string;
   data: {
+    id: string;
     type?: string;
     screen?: string;
     entityId?: string;
