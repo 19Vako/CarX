@@ -34,6 +34,7 @@ export default Sentry.wrap(function App() {
     "SpaceMono-Regular": require("@/assets/fonts/SpaceMono-Regular.ttf"),
     "Roboto-Medium": require("@/assets/fonts/Roboto-Medium.ttf"),
   });
+
   if (!fontsLoaded) {
     return null;
   }

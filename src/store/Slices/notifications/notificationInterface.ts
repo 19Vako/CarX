@@ -1,4 +1,4 @@
-import { PushNotificationMessage } from "@/src/notifications/push";
+import { PushNotificationMessage } from "@/src/notifications";
 
 export type NotificationItem = PushNotificationMessage & {
   id: string;

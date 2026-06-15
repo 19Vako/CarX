@@ -1,4 +1,4 @@
-import { usePushNotifications } from "@/src/notifications/push";
+import { usePushNotifications } from "@/src/notifications";
 import { Stack } from "expo-router";
 import { useAuthSession } from "../src/auth/useAuthSession";
 import SplashScreen from "./(app)/SplashScreen";

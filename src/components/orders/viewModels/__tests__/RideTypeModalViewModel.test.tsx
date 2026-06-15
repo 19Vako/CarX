@@ -1,6 +1,6 @@
 import mapReducer from "@/src/store/Slices/map/mapSlice";
 import paymentReducer, {
-  setRideTypeModalVisible,
+    setRideTypeModalVisible,
 } from "@/src/store/Slices/payment/paymentSlice";
 import userReducer from "@/src/store/Slices/user/userSlice";
 
