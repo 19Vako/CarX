@@ -1,15 +1,9 @@
-import { PushNotificationMessage } from "@/src/notifications";
-
-export type NotificationItem = PushNotificationMessage & {
-  id: string;
-  read: boolean;
-  createdAt: number;
-};
+import { PushNotificationMessage } from "@/src/types/pushNotification.types";
 
 export interface NotificationsState {
   lastNotificationId: string | null;
   unreadCount: number;
-  notifications: NotificationItem[];
+  notifications: PushNotificationMessage[];
 }
 
 export const initialState: NotificationsState = {
