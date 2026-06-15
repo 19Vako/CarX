@@ -1,5 +1,4 @@
 import DrawerButton from "@/src/components/navigation/views/DrawerButton";
-import { NotificationDebugMenu } from "@/src/components/NotificationDebugMenu";
 import BottomWayMenu from "@/src/components/orders/views/BottomWayMenu";
 import Map from "@/src/components/orders/views/Map";
 
@@ -11,7 +10,6 @@ export default function Index() {
     <View style={{ flex: 1, justifyContent: "center" }}>
       <DrawerButton />
       <Map />
-      <NotificationDebugMenu />
       <BottomWayMenu />
     </View>
   );
