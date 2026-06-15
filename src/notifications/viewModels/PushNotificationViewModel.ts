@@ -1,9 +1,13 @@
+import { addNotification } from "@/src/store/Slices/notifications/notificationSlice";
 import { RootState } from "@/src/store/store";
 import { useCallback, useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  PushNotificationMessage,
+  PushNotificationState,
+} from "../../types/pushNotification.types";
 import { saveExpoPushToken } from "../api/saveExpoPushToken";
 import { NotificationPushService } from "../services/notificationPushService";
-import { PushNotificationState } from "../types/push.types";
 
 const initialState: PushNotificationState = {
   isGranted: false,
@@ -14,6 +18,7 @@ const initialState: PushNotificationState = {
 export function PushNotificationViewModel() {
   const [state, setState] = useState<PushNotificationState>(initialState);
   const { getPermissions } = useMemo(() => NotificationPushService(), []);
+  const dispatch = useDispatch();
   const { uid } = useSelector((state: RootState) => state.user);
 
   const register = useCallback(async () => {
@@ -42,5 +47,9 @@ export function PushNotificationViewModel() {
     }
   }, [uid]);
 
-  return { ...state, register };
+  const handleMessage = (message: PushNotificationMessage) => {
+    dispatch(addNotification(message));
+  };
+
+  return { ...state, register, handleMessage };
 }

@@ -11,16 +11,15 @@ export const usePushNotifications = ({
   isAuthenticated: boolean;
   isLoading: boolean;
 }) => {
-  const { register, error, isGranted } = PushNotificationViewModel();
+  const { register, error, isGranted, handleMessage } =
+    PushNotificationViewModel();
 
   useEffect(() => {
     setupNotifications();
   }, []);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      register();
-    }
+    register();
   }, [register, isAuthenticated]);
 
   useEffect(() => {
@@ -29,20 +28,26 @@ export const usePushNotifications = ({
     const response = Notifications.getLastNotificationResponse();
     if (!response) return;
 
-    NotificationNavigationService(response.notification.request.content.data);
-  }, [isAuthenticated, isLoading]);
+    NotificationNavigationService(
+      response.notification.request.content.data as any,
+    );
+    handleMessage(response.notification.request.content as any);
+  }, [isLoading, isAuthenticated]);
 
   useEffect(() => {
     if (!isAuthenticated) return;
 
     const receivedListener = Notifications.addNotificationReceivedListener(
-      () => {},
+      (response) => {
+        handleMessage(response.request.content as any);
+      },
     );
 
     const responseListener =
       Notifications.addNotificationResponseReceivedListener((response) => {
+        handleMessage(response.notification.request.content as any);
         NotificationNavigationService(
-          response.notification.request.content.data,
+          response.notification.request.content.data as any,
         );
       });
 

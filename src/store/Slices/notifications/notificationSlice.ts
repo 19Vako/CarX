@@ -1,37 +1,26 @@
+import { PushNotificationMessage } from "@/src/types/pushNotification.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialState, NotificationItem } from "./notificationInterface";
+import { initialState } from "./notificationInterface";
 
-const notificatioSlice = createSlice({
-  name: "notificatioSlice",
+const notificationSlice = createSlice({
+  name: "notificationSlice",
   initialState: initialState,
   reducers: {
-    addNotification(state, action: PayloadAction<NotificationItem>) {
+    addNotification(state, action: PayloadAction<PushNotificationMessage>) {
       const notification = action.payload;
 
-      const exists = state.notifications.find((n) => n.id === notification.id);
+      const exists = state.notifications.find(
+        (n) => n.data.id === notification.data.id,
+      );
 
       if (exists) return;
 
       state.notifications.unshift(notification);
-
-      state.lastNotificationId = notification.id;
-
+      state.lastNotificationId = notification.data.id;
       state.unreadCount += 1;
-    },
-
-    markAsRead(state, action: PayloadAction<string>) {
-      const id = action.payload;
-      const notification = state.notifications.find((n) => n.id === id);
-
-      if (!notification) return;
-      if (notification.read) return;
-
-      notification.read = true;
-
-      state.unreadCount = Math.max(0, state.unreadCount - 1);
     },
   },
 });
 
-export const { addNotification, markAsRead } = notificatioSlice.actions;
-export default notificatioSlice.reducer;
+export const { addNotification } = notificationSlice.actions;
+export default notificationSlice.reducer;
