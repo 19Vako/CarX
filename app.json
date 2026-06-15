@@ -21,7 +21,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sergii.carx",
-      "googleServicesFile": "./GoogleService-Info.plist",
       "icon": "./assets/images/favicon.png",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
