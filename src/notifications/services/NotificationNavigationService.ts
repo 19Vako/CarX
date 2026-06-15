@@ -1,5 +1,5 @@
 import { Href, router } from "expo-router";
-import { PushNotificationMessage } from "../types/push.types";
+import { PushNotificationMessage } from "../../types/pushNotification.types";
 
 export function NotificationNavigationService(
   data: PushNotificationMessage["data"],

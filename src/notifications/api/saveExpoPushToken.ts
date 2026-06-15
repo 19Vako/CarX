@@ -1,6 +1,6 @@
 import { LogService } from "@/src/utils/LogService";
 import axios from "axios";
-import { SaveExpoPushTokenError } from "../types/push.types";
+import { SaveExpoPushTokenError } from "../../types/pushNotification.types";
 
 export const saveExpoPushToken = async (userId: string, token: string) => {
   try {
