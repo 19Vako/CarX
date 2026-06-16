@@ -1,5 +1,8 @@
 import cors from "cors";
 import { onRequest } from "firebase-functions/v2/https";
+export { savePushToken } from "./notification/api/savePushToken";
+export { sendTestNotification } from "./notification/triggers/sendTestNotification";
+
 import Stripe from "stripe";
 
 const corsHandler = cors({ origin: true });
@@ -11,12 +14,10 @@ export const paymentSheet = onRequest(
       const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
         apiVersion: "2026-03-25.dahlia",
       });
-
       if (req.method !== "POST") {
         res.status(405).send("Method Not Allowed");
         return;
       }
-
       try {
         const { amount, currency, firebaseUID, email, name } = req.body;
 

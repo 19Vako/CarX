@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import reactotron from "../configs/reactotron/ReactotronConfig";
 import location from "./Slices/map/mapSlice";
+import notification from "./Slices/notifications/notificationSlice";
 import payment from "./Slices/payment/paymentSlice";
 import userReducer from "./Slices/user/userSlice";
 
@@ -9,6 +10,7 @@ const store = configureStore({
     user: userReducer,
     location: location,
     payment: payment,
+    notification: notification,
   },
   enhancers: (getDefaultEnhancers) => {
     return getDefaultEnhancers().concat(reactotron.createEnhancer());

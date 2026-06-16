@@ -1,5 +1,4 @@
 import { initGlobalLocationTracking } from "@/src/location/positionService";
-import { useNotificationListener } from "@/src/notifications/local";
 import store from "@/src/store/store";
 import * as Sentry from "@sentry/react-native";
 import { StripeProvider } from "@stripe/stripe-react-native";
@@ -27,8 +26,6 @@ if (__DEV__) {
 }
 
 export default Sentry.wrap(function App() {
-  useNotificationListener();
-
   useEffect(() => {
     initGlobalLocationTracking();
   }, []);

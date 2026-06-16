@@ -21,6 +21,7 @@ export default function BottomWayMenu() {
   return (
     <>
       <OpenRideTypeModal />
+
       <View style={styles.container}>
         <View style={styles.addressBlock}>
           <TouchableOpacity
