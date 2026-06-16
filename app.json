@@ -26,7 +26,6 @@
         "ITSAppUsesNonExemptEncryption": false
       }
     },
-
     "android": {
       "permissions": [
         "ACCESS_FINE_LOCATION",
@@ -44,7 +43,6 @@
       },
       "edgeToEdgeEnabled": true
     },
-
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -67,6 +65,23 @@
           "iosUrlScheme": "com.googleusercontent.apps.745026637842-4dg63coer9d5gq78vr9frheeo08i6vp7"
         }
       ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "extraPods": [
+              {
+                "name": "GoogleUtilities",
+                "modular_headers": true
+              },
+              {
+                "name": "RecaptchaInterop",
+                "modular_headers": true
+              }
+            ]
+          }
+        }
+      ],
       "expo-secure-store",
       [
         "@sentry/react-native/expo",
@@ -76,7 +91,6 @@
           "organization": "ggroup"
         }
       ],
-      "@sentry/react-native",
       "expo-font",
       [
         "expo-location",
