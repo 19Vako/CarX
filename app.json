@@ -4,7 +4,7 @@
     "slug": "carX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "com.sergii.carX",
+    "scheme": "com.sergii.carx",
     "platforms": ["ios", "android"],
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#808080",
@@ -20,33 +20,28 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.sergii.carX",
-      "googleServicesFile": "./GoogleService-Info.plist",
+      "bundleIdentifier": "com.sergii.carx",
       "icon": "./assets/images/favicon.png",
       "infoPlist": {
-        "CFBundleURLTypes": [
-          {
-            "CFBundleURLSchemes": [
-              "com.sergii.carX",
-              "com.googleusercontent.apps.745026637842-srtjnigkf7ipbkqj66qcrd7c9pml7gr1"
-            ]
-          }
-        ],
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
-      "googleServicesFile": "./google-services.json",
-      "package": "com.sergii.carX",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION"
+      ],
+      "package": "com.sergii.carx",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/favicon.png",
         "backgroundColor": "#808080"
       },
-      "edgeToEdgeEnabled": true,
-      "manifestPlaceholders": {
-        "appAuthRedirectScheme": "carX"
-      }
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
@@ -67,7 +62,24 @@
       [
         "@react-native-google-signin/google-signin",
         {
-          "iosUrlScheme": "com.googleusercontent.apps.561248963797-ng585ieq3ael47icplmhdll0gbnl52p1"
+          "iosUrlScheme": "com.googleusercontent.apps.745026637842-4dg63coer9d5gq78vr9frheeo08i6vp7"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "extraPods": [
+              {
+                "name": "GoogleUtilities",
+                "modular_headers": true
+              },
+              {
+                "name": "RecaptchaInterop",
+                "modular_headers": true
+              }
+            ]
+          }
         }
       ],
       "expo-secure-store",
@@ -79,7 +91,6 @@
           "organization": "ggroup"
         }
       ],
-      "@sentry/react-native",
       "expo-font",
       [
         "expo-location",
@@ -90,12 +101,17 @@
           "isAndroidBackgroundLocationEnabled": true
         }
       ],
-
       [
         "@stripe/stripe-react-native",
         {
           "merchantIdentifier": "merchant.com.sergii.carx",
           "enableGooglePay": true
+        }
+      ],
+      [
+        "react-native-app-auth",
+        {
+          "redirectUrls": ["com.sergii.carx"]
         }
       ]
     ],
@@ -104,15 +120,14 @@
     },
     "extra": {
       "router": {},
-      "appAuthRedirectScheme": "carX",
+      "appAuthRedirectScheme": "carx",
       "eas": {
-        "projectId": "a6094235-e94a-458c-8d0a-db766fdf822b"
+        "projectId": "a5529b53-c9b2-4288-82da-0b7b0460e30f"
       }
     },
-    "owner": "19vako",
     "runtimeVersion": "1.0.0",
     "updates": {
-      "url": "https://u.expo.dev/a6094235-e94a-458c-8d0a-db766fdf822b"
+      "url": "https://u.expo.dev/a5529b53-c9b2-4288-82da-0b7b0460e30f"
     }
   }
 }
