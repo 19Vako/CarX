@@ -8,8 +8,16 @@ const paymentSlice = createSlice({
     setRideTypeModalVisible(state, action: PayloadAction<boolean>) {
       state.rideTypeModalVisible = action.payload;
     },
+
+    setOrderModalVisible(state, action: PayloadAction<boolean>) {
+      state.orderModalVisible = action.payload;
+      if (state.rideTypeModalVisible) {
+        state.rideTypeModalVisible = false;
+      }
+    },
   },
 });
 
-export const { setRideTypeModalVisible } = paymentSlice.actions;
+export const { setRideTypeModalVisible, setOrderModalVisible } =
+  paymentSlice.actions;
 export default paymentSlice.reducer;
