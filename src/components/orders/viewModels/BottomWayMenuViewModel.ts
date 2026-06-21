@@ -8,6 +8,9 @@ export function BottomWayMenuViewModel() {
   const { pointFrom, pointTo } = useSelector(
     (state: RootState) => state.location,
   );
+  const { orderModalVisible } = useSelector(
+    (state: RootState) => state.payment,
+  );
   const [modalVisible, setModalVisible] = useState(false);
   const [fromModalVisible, setFromModalVisible] = useState(false);
 
@@ -24,5 +27,6 @@ export function BottomWayMenuViewModel() {
     pointFrom,
     fromModalVisible,
     setFromModalVisible,
+    orderModalVisible,
   };
 }
