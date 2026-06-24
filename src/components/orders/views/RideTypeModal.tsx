@@ -19,7 +19,6 @@ export default function RideTypeModal() {
     selectedRideId,
     visible,
     handleRideType,
-    loading,
     onClose,
     selectRideType,
   } = RideTypeModalViewModel();
@@ -61,7 +60,6 @@ export default function RideTypeModal() {
         <TouchableOpacity
           style={styles.chooseButton}
           activeOpacity={0.8}
-          disabled={loading}
           onPress={() => handleRideType()}
         >
           <Text style={styles.chooseButtonText}>Order</Text>

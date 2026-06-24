@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialState } from "./paymentInterfase";
+import { initialState, PaymentState } from "./paymentInterfase";
 
 const paymentSlice = createSlice({
   name: "paymentSlice",
@@ -15,9 +15,19 @@ const paymentSlice = createSlice({
         state.rideTypeModalVisible = false;
       }
     },
+
+    setSelectedPayment(
+      state,
+      action: PayloadAction<PaymentState["selectedPayment"]>,
+    ) {
+      state.selectedPayment = action.payload;
+    },
   },
 });
 
-export const { setRideTypeModalVisible, setOrderModalVisible } =
-  paymentSlice.actions;
+export const {
+  setRideTypeModalVisible,
+  setOrderModalVisible,
+  setSelectedPayment,
+} = paymentSlice.actions;
 export default paymentSlice.reducer;
