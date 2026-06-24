@@ -1,4 +1,4 @@
-import { setRideTypeModalVisible } from "@/src/store/Slices/payment/paymentSlice";
+import { setOrderModalVisible, setRideTypeModalVisible } from "@/src/store/Slices/payment/paymentSlice";
 import { RootState } from "@/src/store/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +20,10 @@ export function BottomWayMenuViewModel() {
     }
   }, [pointTo]);
 
+  const CloseOrderModal = () => {
+    dispatch(setOrderModalVisible(false));
+  };
+
   return {
     modalVisible,
     setModalVisible,
@@ -28,5 +32,6 @@ export function BottomWayMenuViewModel() {
     fromModalVisible,
     setFromModalVisible,
     orderModalVisible,
+    CloseOrderModal,
   };
 }

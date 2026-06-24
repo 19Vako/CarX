@@ -5,6 +5,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { BottomWayMenuViewModel } from "../viewModels/BottomWayMenuViewModel";
 import OpenRideTypeModal from "../views/OpenRideTypeModal";
 import WhereToModal from "../views/WhereToModal";
+import OrderModal from "./OrderModal";
 import PointFromModal from "./PointFromModal";
 import RideTypeModal from "./RideTypeModal";
 
@@ -16,12 +17,12 @@ export default function BottomWayMenu() {
     pointFrom,
     fromModalVisible,
     setFromModalVisible,
+    orderModalVisible,
+    CloseOrderModal,
   } = BottomWayMenuViewModel();
 
   return (
     <>
-      <OpenRideTypeModal />
-
       <View style={styles.container}>
         <View style={styles.addressBlock}>
           <TouchableOpacity
@@ -71,6 +72,10 @@ export default function BottomWayMenu() {
           )}
         </TouchableOpacity>
       </View>
+
+      <OpenRideTypeModal />
+      <OrderModal visible={orderModalVisible} onClose={CloseOrderModal} />
+
       <WhereToModal
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
