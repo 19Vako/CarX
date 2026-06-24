@@ -1,22 +1,24 @@
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
-
-const MOCK_DISTANCE_KM = 1.3;
-const MOCK_ETA_MIN = 10;
-const MOCK_PRICE = 6.5;
-const MOCK_CURRENCY = "$";
-
-interface OrderModalProps {
-  visible: boolean;
-  onClose?: () => void;
-  onPay?: () => void;
-}
+import {
+  Image,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { OrderModalViewModel } from "../viewModels/OrderModalViewModel";
 
 export default function OrderModal({
   visible,
   onClose,
-  onPay,
-}: OrderModalProps) {
+}: {
+  visible: boolean;
+  onClose: () => void;
+}) {
+  const { selectedPayment, showPaymentSheet, loading } = OrderModalViewModel();
+
   return (
     <Modal
       visible={visible}
@@ -25,30 +27,45 @@ export default function OrderModal({
       onRequestClose={onClose}
     >
       <View style={styles.container}>
-        <View style={styles.handle} />
-
-        <View style={styles.infoRow}>
-          <Text style={styles.distanceText}>{MOCK_DISTANCE_KM} km</Text>
-          <Text style={styles.etaText}>{MOCK_ETA_MIN} min</Text>
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+            <Ionicons name="close" size={24} color="#FFFFFF" />
+          </TouchableOpacity>
         </View>
 
-        <Text style={styles.priceText}>
-          {MOCK_CURRENCY}
-          {MOCK_PRICE.toFixed(2)}
-        </Text>
+        <View style={styles.carImageContainer}>
+          <Image
+            style={styles.carImage}
+            source={selectedPayment?.image}
+            resizeMode="contain"
+          />
+        </View>
+        <View style={styles.infoRow}>
+          <View style={styles.infoRowBox}>
+            <Text style={styles.infoTitle}>Distance:</Text>
+            <Text style={styles.distanceText}>
+              {selectedPayment?.multiplier} km
+            </Text>
+          </View>
+          <View style={styles.infoRowBox}>
+            <Text style={styles.infoTitle}>Driver arrival:</Text>
+            <Text style={styles.etaText}>{selectedPayment?.time} min</Text>
+          </View>
+        </View>
+        <View style={styles.infoRowBox}>
+          <Text style={styles.infoTitle}>Price:</Text>
+          <Text style={styles.priceText}>{selectedPayment?.displayPrice}$</Text>
+        </View>
 
-        <Pressable
-          onPress={onPay}
-          style={({ pressed }) => [
-            styles.payButton,
-            pressed && styles.payButtonPressed,
-          ]}
+        <TouchableOpacity
+          style={styles.payButton}
+          onPress={showPaymentSheet}
+          disabled={loading}
         >
           <Text style={styles.payButtonText}>
-            Pay {MOCK_CURRENCY}
-            {MOCK_PRICE.toFixed(2)}
+            {loading ? "Loading..." : "Pay"}
           </Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </Modal>
   );
@@ -58,7 +75,6 @@ const styles = StyleSheet.create({
   container: {
     position: "absolute",
     bottom: 0,
-    height: 300,
     width: "100%",
     backgroundColor: "#222730",
     borderTopLeftRadius: 20,
@@ -68,27 +84,61 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     zIndex: 15,
   },
-  handle: {
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: "rgba(255,255,255,0.2)",
-    alignSelf: "center",
-    marginBottom: 18,
-  },
-  infoRow: {
+
+  header: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "flex-end",
+  },
+
+  closeButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: "#303641",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  carImageContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  carImage: {
+    height: 200,
+    width: "100%",
+
+    marginHorizontal: 15,
+  },
+
+  infoRow: {
+    justifyContent: "space-between",
+    alignItems: "flex-start",
     marginBottom: 8,
   },
+  infoRowBox: {
+    width: "100%",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+
+  infoTitle: {
+    color: "white",
+    fontWeight: "700",
+    fontSize: 20,
+    marginRight: 10,
+  },
+
   distanceText: {
     color: "rgba(255,255,255,0.6)",
-    fontSize: 14,
+    fontSize: 20,
   },
   etaText: {
     color: "rgba(255,255,255,0.6)",
-    fontSize: 14,
+    fontSize: 20,
   },
   priceText: {
     color: "#FFFFFF",
