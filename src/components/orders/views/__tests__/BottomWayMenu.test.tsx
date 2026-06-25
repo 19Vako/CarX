@@ -4,12 +4,11 @@ import BottomWayMenu from "../BottomWayMenu";
 
 import { BottomWayMenuViewModel } from "../../viewModels/BottomWayMenuViewModel";
 jest.mock("../../viewModels/BottomWayMenuViewModel");
-
 jest.mock("../../views/OpenRideTypeModal", () => "OpenRideTypeModal");
 jest.mock("../../views/WhereToModal", () => "WhereToModal");
 jest.mock("../../views/PointFromModal", () => "PointFromModal");
 jest.mock("../../views/RideTypeModal", () => "RideTypeModal");
-
+jest.mock("../../views/OrderModal.tsx", () => "OrderModal");
 jest.mock("@expo/vector-icons", () => ({
   MaterialCommunityIcons: "MaterialCommunityIcons",
 }));
