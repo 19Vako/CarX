@@ -37,6 +37,11 @@
         "android.permission.FOREGROUND_SERVICE_LOCATION"
       ],
       "package": "com.sergii.carx",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAeg73Geu1Tire1H5jwvkvx9tNNvQ-dOAk"
+        }
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/favicon.png",
         "backgroundColor": "#808080"
