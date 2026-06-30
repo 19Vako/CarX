@@ -2,7 +2,6 @@ import { Ionicons } from "@expo/vector-icons";
 
 import React from "react";
 import {
-  ActivityIndicator,
   FlatList,
   Modal,
   StyleSheet,
@@ -19,11 +18,9 @@ export default function RideTypeModal() {
     rideOptions,
     selectedRideId,
     visible,
-    selectedOption,
-    loading,
+    handleRideType,
     onClose,
     selectRideType,
-    handlePayment,
   } = RideTypeModalViewModel();
 
   return (
@@ -61,18 +58,11 @@ export default function RideTypeModal() {
         />
 
         <TouchableOpacity
-          onPress={handlePayment}
-          style={[styles.chooseButton, loading && { opacity: 0.7 }]}
+          style={styles.chooseButton}
           activeOpacity={0.8}
-          disabled={loading}
+          onPress={() => handleRideType()}
         >
-          {loading ? (
-            <ActivityIndicator color="#15151A" />
-          ) : (
-            <Text style={styles.chooseButtonText}>
-              {`Pay $${selectedOption.displayPrice}`}
-            </Text>
-          )}
+          <Text style={styles.chooseButtonText}>Order</Text>
         </TouchableOpacity>
       </View>
     </Modal>

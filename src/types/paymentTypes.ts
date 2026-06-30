@@ -1,5 +1,3 @@
-// types.ts
-
 export namespace PaymentSheet {
   export interface SetupParams {
     paymentIntentClientSecret?: string;
@@ -33,7 +31,7 @@ export namespace PaymentMethod {
   }
 
   export interface CardResult {
-    brand?: string; // Можно использовать CardBrand если нужно
+    brand?: string;
     country?: string;
     expYear?: number;
     expMonth?: number;
@@ -103,3 +101,13 @@ export type InitPaymentSheetResult = { error?: StripeError<PaymentSheetError> };
 export type PresentPaymentSheetResult = {
   error?: StripeError<PaymentSheetError>;
 };
+
+export interface SelectedPayment {
+  priceInCents: number;
+  displayPrice: string;
+  id: string;
+  title: string;
+  image: any;
+  multiplier: number;
+  time: string;
+}

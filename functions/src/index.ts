@@ -2,9 +2,9 @@ import cors from "cors";
 import { onRequest } from "firebase-functions/v2/https";
 export { savePushToken } from "./notification/api/savePushToken";
 export { sendTestNotification } from "./notification/triggers/sendTestNotification";
+export { cancelOrder, createOrder } from "./order";
 
 import Stripe from "stripe";
-
 const corsHandler = cors({ origin: true });
 
 export const paymentSheet = onRequest(
